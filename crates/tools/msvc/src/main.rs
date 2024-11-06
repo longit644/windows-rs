@@ -8,6 +8,7 @@ fn main() {
         match platform {
             "x86" => "i686_msvc",
             "x64" => "x86_64_msvc",
+            "arm" => "thumbv7a_msvc",
             "arm64" => "aarch64_msvc",
             _ => {
                 println!("Unknown platform");
@@ -340,7 +341,7 @@ fn make_reproducible(lib: &std::path::Path) {
 
 #[test]
 fn test_make_reproducible() {
-    for (machine, offset) in [("x86", 0), ("x64", 12), ("arm64", 12)] {
+    for (machine, offset) in [("x86", 0), ("x64", 12), ("arm", 8), ("arm64", 12)] {
         let mut def = std::fs::File::create("test.def").unwrap();
         def.write_all(
             r#"

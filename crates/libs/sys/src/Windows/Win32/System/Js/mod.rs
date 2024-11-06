@@ -12,7 +12,7 @@
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_System_Diagnostics_Debug_ActiveScript")]
 ::windows_targets::link!("chakra.dll" "system" #[doc = "Required features: `\"Win32_System_Diagnostics_Debug_ActiveScript\"`"] fn JsCreateContext(runtime : *const ::core::ffi::c_void, debugapplication : super::Diagnostics::Debug::ActiveScript:: IDebugApplication64, newcontext : *mut *mut ::core::ffi::c_void) -> JsErrorCode);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_System_Diagnostics_Debug_ActiveScript")]
 ::windows_targets::link!("chakra.dll" "system" #[doc = "Required features: `\"Win32_System_Diagnostics_Debug_ActiveScript\"`"] fn JsCreateContext(runtime : *const ::core::ffi::c_void, debugapplication : super::Diagnostics::Debug::ActiveScript:: IDebugApplication32, newcontext : *mut *mut ::core::ffi::c_void) -> JsErrorCode);
 ::windows_targets::link!("chakra.dll" "system" fn JsCreateError(message : *const ::core::ffi::c_void, error : *mut *mut ::core::ffi::c_void) -> JsErrorCode);
@@ -85,7 +85,7 @@
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_System_Diagnostics_Debug_ActiveScript")]
 ::windows_targets::link!("chakra.dll" "system" #[doc = "Required features: `\"Win32_System_Diagnostics_Debug_ActiveScript\"`"] fn JsStartDebugging(debugapplication : super::Diagnostics::Debug::ActiveScript:: IDebugApplication64) -> JsErrorCode);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_System_Diagnostics_Debug_ActiveScript")]
 ::windows_targets::link!("chakra.dll" "system" #[doc = "Required features: `\"Win32_System_Diagnostics_Debug_ActiveScript\"`"] fn JsStartDebugging(debugapplication : super::Diagnostics::Debug::ActiveScript:: IDebugApplication32) -> JsErrorCode);
 #[cfg(feature = "Win32_System_Diagnostics_Debug_ActiveScript")]

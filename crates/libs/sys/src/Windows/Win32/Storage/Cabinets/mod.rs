@@ -269,14 +269,14 @@ impl ::core::clone::Clone for FDISPILLFILE {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct FDISPILLFILE {
     pub ach: [u8; 2],
     pub cbFile: i32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for FDISPILLFILE {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for FDISPILLFILE {
     fn clone(&self) -> Self {
         *self

@@ -4091,15 +4091,15 @@ impl ::core::clone::Clone for KSNODEPROPERTY_AUDIO_3D_LISTENER {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct KSNODEPROPERTY_AUDIO_3D_LISTENER {
     pub NodeProperty: KSNODEPROPERTY,
     pub ListenerId: *mut ::core::ffi::c_void,
     pub Reserved: u32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for KSNODEPROPERTY_AUDIO_3D_LISTENER {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for KSNODEPROPERTY_AUDIO_3D_LISTENER {
     fn clone(&self) -> Self {
         *self
@@ -4146,16 +4146,16 @@ impl ::core::clone::Clone for KSNODEPROPERTY_AUDIO_PROPERTY {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct KSNODEPROPERTY_AUDIO_PROPERTY {
     pub NodeProperty: KSNODEPROPERTY,
     pub AppContext: *mut ::core::ffi::c_void,
     pub Length: u32,
     pub Reserved: u32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for KSNODEPROPERTY_AUDIO_PROPERTY {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for KSNODEPROPERTY_AUDIO_PROPERTY {
     fn clone(&self) -> Self {
         *self
@@ -5895,7 +5895,7 @@ impl ::core::clone::Clone for KSSTREAM_HEADER {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct KSSTREAM_HEADER {
     pub Size: u32,
     pub TypeSpecificFlags: u32,
@@ -5906,9 +5906,9 @@ pub struct KSSTREAM_HEADER {
     pub Data: *mut ::core::ffi::c_void,
     pub OptionsFlags: u32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for KSSTREAM_HEADER {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for KSSTREAM_HEADER {
     fn clone(&self) -> Self {
         *self

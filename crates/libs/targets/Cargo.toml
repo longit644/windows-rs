@@ -30,3 +30,6 @@ windows_x86_64_gnullvm = { path = "../../targets/x86_64_gnullvm", version = "0.5
 
 [target.aarch64-pc-windows-gnullvm.dependencies]
 windows_aarch64_gnullvm = { path = "../../targets/aarch64_gnullvm", version = "0.52.0" }
+
+[target.thumbv7a-pc-windows-msvc.dependencies]
+windows_thumbv7a_msvc = { path = "../../targets/thumbv7a_msvc", version = "0.52.0" }

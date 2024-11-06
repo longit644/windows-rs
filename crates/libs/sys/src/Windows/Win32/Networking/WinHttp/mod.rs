@@ -924,17 +924,17 @@ impl ::core::clone::Clone for WINHTTP_CONNECTION_INFO {
 }
 #[repr(C, packed(4))]
 #[doc = "Required features: `\"Win32_Networking_WinSock\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub struct WINHTTP_CONNECTION_INFO {
     pub cbSize: u32,
     pub LocalAddress: super::WinSock::SOCKADDR_STORAGE,
     pub RemoteAddress: super::WinSock::SOCKADDR_STORAGE,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for WINHTTP_CONNECTION_INFO {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for WINHTTP_CONNECTION_INFO {
     fn clone(&self) -> Self {
@@ -1082,14 +1082,14 @@ impl ::core::clone::Clone for WINHTTP_MATCH_CONNECTION_GUID {
     }
 }
 #[repr(C, packed(4))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct WINHTTP_MATCH_CONNECTION_GUID {
     pub ConnectionGuid: ::windows_sys::core::GUID,
     pub ullFlags: u64,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for WINHTTP_MATCH_CONNECTION_GUID {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for WINHTTP_MATCH_CONNECTION_GUID {
     fn clone(&self) -> Self {
         *self
@@ -1218,7 +1218,7 @@ impl ::core::clone::Clone for WINHTTP_PROXY_SETTINGS_EX {
     }
 }
 #[repr(C, packed(4))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct WINHTTP_PROXY_SETTINGS_EX {
     pub ullGenerationId: u64,
     pub ullFlags: u64,
@@ -1230,9 +1230,9 @@ pub struct WINHTTP_PROXY_SETTINGS_EX {
     pub dwInterfaceIndex: u32,
     pub pcwszConnectionName: ::windows_sys::core::PCWSTR,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for WINHTTP_PROXY_SETTINGS_EX {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for WINHTTP_PROXY_SETTINGS_EX {
     fn clone(&self) -> Self {
         *self
@@ -1254,15 +1254,15 @@ impl ::core::clone::Clone for WINHTTP_PROXY_SETTINGS_PARAM {
     }
 }
 #[repr(C, packed(4))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct WINHTTP_PROXY_SETTINGS_PARAM {
     pub ullFlags: u64,
     pub pcwszConnectionName: ::windows_sys::core::PCWSTR,
     pub pcwszProbeHost: ::windows_sys::core::PCWSTR,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for WINHTTP_PROXY_SETTINGS_PARAM {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for WINHTTP_PROXY_SETTINGS_PARAM {
     fn clone(&self) -> Self {
         *self
@@ -1296,16 +1296,16 @@ impl ::core::clone::Clone for WINHTTP_REQUEST_STATS {
     }
 }
 #[repr(C, packed(4))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct WINHTTP_REQUEST_STATS {
     pub ullFlags: u64,
     pub ulIndex: u32,
     pub cStats: u32,
     pub rgullStats: [u64; 32],
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for WINHTTP_REQUEST_STATS {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for WINHTTP_REQUEST_STATS {
     fn clone(&self) -> Self {
         *self
@@ -1326,14 +1326,14 @@ impl ::core::clone::Clone for WINHTTP_REQUEST_TIMES {
     }
 }
 #[repr(C, packed(4))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct WINHTTP_REQUEST_TIMES {
     pub cTimes: u32,
     pub rgullTimes: [u64; 64],
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for WINHTTP_REQUEST_TIMES {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for WINHTTP_REQUEST_TIMES {
     fn clone(&self) -> Self {
         *self
@@ -1358,7 +1358,7 @@ impl ::core::clone::Clone for WINHTTP_RESOLVER_CACHE_CONFIG {
     }
 }
 #[repr(C, packed(4))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct WINHTTP_RESOLVER_CACHE_CONFIG {
     pub ulMaxResolverCacheEntries: u32,
     pub ulMaxCacheEntryAge: u32,
@@ -1367,9 +1367,9 @@ pub struct WINHTTP_RESOLVER_CACHE_CONFIG {
     pub ullConnResolutionWaitTime: u64,
     pub ullFlags: u64,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for WINHTTP_RESOLVER_CACHE_CONFIG {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for WINHTTP_RESOLVER_CACHE_CONFIG {
     fn clone(&self) -> Self {
         *self

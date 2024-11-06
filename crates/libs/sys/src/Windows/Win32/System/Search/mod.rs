@@ -11,15 +11,15 @@ pub mod Common;
 ::windows_targets::link!("odbc32.dll" "system" fn SQLAllocStmt(connectionhandle : *mut ::core::ffi::c_void, statementhandle : *mut *mut ::core::ffi::c_void) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLBindCol(statementhandle : *mut ::core::ffi::c_void, columnnumber : u16, targettype : i16, targetvalue : *mut ::core::ffi::c_void, bufferlength : i64, strlen_or_ind : *mut i64) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLBindCol(statementhandle : *mut ::core::ffi::c_void, columnnumber : u16, targettype : i16, targetvalue : *mut ::core::ffi::c_void, bufferlength : i32, strlen_or_ind : *mut i32) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLBindParam(statementhandle : *mut ::core::ffi::c_void, parameternumber : u16, valuetype : i16, parametertype : i16, lengthprecision : u64, parameterscale : i16, parametervalue : *mut ::core::ffi::c_void, strlen_or_ind : *mut i64) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLBindParam(statementhandle : *mut ::core::ffi::c_void, parameternumber : u16, valuetype : i16, parametertype : i16, lengthprecision : u32, parameterscale : i16, parametervalue : *mut ::core::ffi::c_void, strlen_or_ind : *mut i32) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLBindParameter(hstmt : *mut ::core::ffi::c_void, ipar : u16, fparamtype : i16, fctype : i16, fsqltype : i16, cbcoldef : u64, ibscale : i16, rgbvalue : *mut ::core::ffi::c_void, cbvaluemax : i64, pcbvalue : *mut i64) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLBindParameter(hstmt : *mut ::core::ffi::c_void, ipar : u16, fparamtype : i16, fctype : i16, fsqltype : i16, cbcoldef : u32, ibscale : i16, rgbvalue : *mut ::core::ffi::c_void, cbvaluemax : i32, pcbvalue : *mut i32) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLBrowseConnect(hdbc : *mut ::core::ffi::c_void, szconnstrin : *const u8, cchconnstrin : i16, szconnstrout : *mut u8, cchconnstroutmax : i16, pcchconnstrout : *mut i16) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLBrowseConnectA(hdbc : *mut ::core::ffi::c_void, szconnstrin : *const u8, cbconnstrin : i16, szconnstrout : *mut u8, cbconnstroutmax : i16, pcbconnstrout : *mut i16) -> i16);
@@ -32,27 +32,27 @@ pub mod Common;
 ::windows_targets::link!("odbcbcp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SQLCloseEnumServers(henumhandle : super::super::Foundation:: HANDLE) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLColAttribute(statementhandle : *mut ::core::ffi::c_void, columnnumber : u16, fieldidentifier : u16, characterattribute : *mut ::core::ffi::c_void, bufferlength : i16, stringlength : *mut i16, numericattribute : *mut i64) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLColAttribute(statementhandle : *mut ::core::ffi::c_void, columnnumber : u16, fieldidentifier : u16, characterattribute : *mut ::core::ffi::c_void, bufferlength : i16, stringlength : *mut i16, numericattribute : *mut ::core::ffi::c_void) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLColAttributeA(hstmt : *mut ::core::ffi::c_void, icol : i16, ifield : i16, pcharattr : *mut ::core::ffi::c_void, cbcharattrmax : i16, pcbcharattr : *mut i16, pnumattr : *mut i64) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLColAttributeA(hstmt : *mut ::core::ffi::c_void, icol : i16, ifield : i16, pcharattr : *mut ::core::ffi::c_void, cbcharattrmax : i16, pcbcharattr : *mut i16, pnumattr : *mut ::core::ffi::c_void) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLColAttributeW(hstmt : *mut ::core::ffi::c_void, icol : u16, ifield : u16, pcharattr : *mut ::core::ffi::c_void, cbdescmax : i16, pcbcharattr : *mut i16, pnumattr : *mut i64) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLColAttributeW(hstmt : *mut ::core::ffi::c_void, icol : u16, ifield : u16, pcharattr : *mut ::core::ffi::c_void, cbdescmax : i16, pcbcharattr : *mut i16, pnumattr : *mut ::core::ffi::c_void) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLColAttributes(hstmt : *mut ::core::ffi::c_void, icol : u16, fdesctype : u16, rgbdesc : *mut ::core::ffi::c_void, cbdescmax : i16, pcbdesc : *mut i16, pfdesc : *mut i64) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLColAttributes(hstmt : *mut ::core::ffi::c_void, icol : u16, fdesctype : u16, rgbdesc : *mut ::core::ffi::c_void, cbdescmax : i16, pcbdesc : *mut i16, pfdesc : *mut i32) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLColAttributesA(hstmt : *mut ::core::ffi::c_void, icol : u16, fdesctype : u16, rgbdesc : *mut ::core::ffi::c_void, cbdescmax : i16, pcbdesc : *mut i16, pfdesc : *mut i64) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLColAttributesA(hstmt : *mut ::core::ffi::c_void, icol : u16, fdesctype : u16, rgbdesc : *mut ::core::ffi::c_void, cbdescmax : i16, pcbdesc : *mut i16, pfdesc : *mut i32) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLColAttributesW(hstmt : *mut ::core::ffi::c_void, icol : u16, fdesctype : u16, rgbdesc : *mut ::core::ffi::c_void, cbdescmax : i16, pcbdesc : *mut i16, pfdesc : *mut i64) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLColAttributesW(hstmt : *mut ::core::ffi::c_void, icol : u16, fdesctype : u16, rgbdesc : *mut ::core::ffi::c_void, cbdescmax : i16, pcbdesc : *mut i16, pfdesc : *mut i32) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLColumnPrivileges(hstmt : *mut ::core::ffi::c_void, szcatalogname : *const u8, cchcatalogname : i16, szschemaname : *const u8, cchschemaname : i16, sztablename : *const u8, cchtablename : i16, szcolumnname : *const u8, cchcolumnname : i16) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLColumnPrivilegesA(hstmt : *mut ::core::ffi::c_void, szcatalogname : *const u8, cbcatalogname : i16, szschemaname : *const u8, cbschemaname : i16, sztablename : *const u8, cbtablename : i16, szcolumnname : *const u8, cbcolumnname : i16) -> i16);
@@ -70,19 +70,19 @@ pub mod Common;
 ::windows_targets::link!("odbc32.dll" "system" fn SQLDataSourcesW(henv : *mut ::core::ffi::c_void, fdirection : u16, szdsn : *mut u16, cchdsnmax : i16, pcchdsn : *mut i16, wszdescription : *mut u16, cchdescriptionmax : i16, pcchdescription : *mut i16) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLDescribeCol(statementhandle : *mut ::core::ffi::c_void, columnnumber : u16, columnname : *mut u8, bufferlength : i16, namelength : *mut i16, datatype : *mut i16, columnsize : *mut u64, decimaldigits : *mut i16, nullable : *mut i16) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLDescribeCol(statementhandle : *mut ::core::ffi::c_void, columnnumber : u16, columnname : *mut u8, bufferlength : i16, namelength : *mut i16, datatype : *mut i16, columnsize : *mut u32, decimaldigits : *mut i16, nullable : *mut i16) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLDescribeColA(hstmt : *mut ::core::ffi::c_void, icol : u16, szcolname : *mut u8, cbcolnamemax : i16, pcbcolname : *mut i16, pfsqltype : *mut i16, pcbcoldef : *mut u64, pibscale : *mut i16, pfnullable : *mut i16) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLDescribeColA(hstmt : *mut ::core::ffi::c_void, icol : u16, szcolname : *mut u8, cbcolnamemax : i16, pcbcolname : *mut i16, pfsqltype : *mut i16, pcbcoldef : *mut u32, pibscale : *mut i16, pfnullable : *mut i16) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLDescribeColW(hstmt : *mut ::core::ffi::c_void, icol : u16, szcolname : *mut u16, cchcolnamemax : i16, pcchcolname : *mut i16, pfsqltype : *mut i16, pcbcoldef : *mut u64, pibscale : *mut i16, pfnullable : *mut i16) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLDescribeColW(hstmt : *mut ::core::ffi::c_void, icol : u16, szcolname : *mut u16, cchcolnamemax : i16, pcchcolname : *mut i16, pfsqltype : *mut i16, pcbcoldef : *mut u32, pibscale : *mut i16, pfnullable : *mut i16) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLDescribeParam(hstmt : *mut ::core::ffi::c_void, ipar : u16, pfsqltype : *mut i16, pcbparamdef : *mut u64, pibscale : *mut i16, pfnullable : *mut i16) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLDescribeParam(hstmt : *mut ::core::ffi::c_void, ipar : u16, pfsqltype : *mut i16, pcbparamdef : *mut u32, pibscale : *mut i16, pfnullable : *mut i16) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLDisconnect(connectionhandle : *mut ::core::ffi::c_void) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLDriverConnect(hdbc : *mut ::core::ffi::c_void, hwnd : isize, szconnstrin : *const u8, cchconnstrin : i16, szconnstrout : *mut u8, cchconnstroutmax : i16, pcchconnstrout : *mut i16, fdrivercompletion : u16) -> i16);
@@ -101,12 +101,12 @@ pub mod Common;
 ::windows_targets::link!("odbc32.dll" "system" fn SQLExecute(statementhandle : *mut ::core::ffi::c_void) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLExtendedFetch(hstmt : *mut ::core::ffi::c_void, ffetchtype : u16, irow : i64, pcrow : *mut u64, rgfrowstatus : *mut u16) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLExtendedFetch(hstmt : *mut ::core::ffi::c_void, ffetchtype : u16, irow : i32, pcrow : *mut u32, rgfrowstatus : *mut u16) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLFetch(statementhandle : *mut ::core::ffi::c_void) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLFetchScroll(statementhandle : *mut ::core::ffi::c_void, fetchorientation : i16, fetchoffset : i64) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLFetchScroll(statementhandle : *mut ::core::ffi::c_void, fetchorientation : i16, fetchoffset : i32) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLForeignKeys(hstmt : *mut ::core::ffi::c_void, szpkcatalogname : *const u8, cchpkcatalogname : i16, szpkschemaname : *const u8, cchpkschemaname : i16, szpktablename : *const u8, cchpktablename : i16, szfkcatalogname : *const u8, cchfkcatalogname : i16, szfkschemaname : *const u8, cchfkschemaname : i16, szfktablename : *const u8, cchfktablename : i16) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLForeignKeysA(hstmt : *mut ::core::ffi::c_void, szpkcatalogname : *const u8, cbpkcatalogname : i16, szpkschemaname : *const u8, cbpkschemaname : i16, szpktablename : *const u8, cbpktablename : i16, szfkcatalogname : *const u8, cbfkcatalogname : i16, szfkschemaname : *const u8, cbfkschemaname : i16, szfktablename : *const u8, cbfktablename : i16) -> i16);
@@ -126,22 +126,22 @@ pub mod Common;
 ::windows_targets::link!("odbc32.dll" "system" fn SQLGetCursorNameW(hstmt : *mut ::core::ffi::c_void, szcursor : *mut u16, cchcursormax : i16, pcchcursor : *mut i16) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLGetData(statementhandle : *mut ::core::ffi::c_void, columnnumber : u16, targettype : i16, targetvalue : *mut ::core::ffi::c_void, bufferlength : i64, strlen_or_indptr : *mut i64) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLGetData(statementhandle : *mut ::core::ffi::c_void, columnnumber : u16, targettype : i16, targetvalue : *mut ::core::ffi::c_void, bufferlength : i32, strlen_or_indptr : *mut i32) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLGetDescField(descriptorhandle : *mut ::core::ffi::c_void, recnumber : i16, fieldidentifier : i16, value : *mut ::core::ffi::c_void, bufferlength : i32, stringlength : *mut i32) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLGetDescFieldA(hdesc : *mut ::core::ffi::c_void, irecord : i16, ifield : i16, rgbvalue : *mut ::core::ffi::c_void, cbbufferlength : i32, stringlength : *mut i32) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLGetDescFieldW(hdesc : *mut ::core::ffi::c_void, irecord : i16, ifield : i16, rgbvalue : *mut ::core::ffi::c_void, cbbufferlength : i32, stringlength : *mut i32) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLGetDescRec(descriptorhandle : *mut ::core::ffi::c_void, recnumber : i16, name : *mut u8, bufferlength : i16, stringlengthptr : *mut i16, typeptr : *mut i16, subtypeptr : *mut i16, lengthptr : *mut i64, precisionptr : *mut i16, scaleptr : *mut i16, nullableptr : *mut i16) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLGetDescRec(descriptorhandle : *mut ::core::ffi::c_void, recnumber : i16, name : *mut u8, bufferlength : i16, stringlengthptr : *mut i16, typeptr : *mut i16, subtypeptr : *mut i16, lengthptr : *mut i32, precisionptr : *mut i16, scaleptr : *mut i16, nullableptr : *mut i16) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLGetDescRecA(hdesc : *mut ::core::ffi::c_void, irecord : i16, szname : *mut u8, cbnamemax : i16, pcbname : *mut i16, pftype : *mut i16, pfsubtype : *mut i16, plength : *mut i64, pprecision : *mut i16, pscale : *mut i16, pnullable : *mut i16) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLGetDescRecA(hdesc : *mut ::core::ffi::c_void, irecord : i16, szname : *mut u8, cbnamemax : i16, pcbname : *mut i16, pftype : *mut i16, pfsubtype : *mut i16, plength : *mut i32, pprecision : *mut i16, pscale : *mut i16, pnullable : *mut i16) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLGetDescRecW(hdesc : *mut ::core::ffi::c_void, irecord : i16, szname : *mut u16, cchnamemax : i16, pcchname : *mut i16, pftype : *mut i16, pfsubtype : *mut i16, plength : *mut i64, pprecision : *mut i16, pscale : *mut i16, pnullable : *mut i16) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLGetDescRecW(hdesc : *mut ::core::ffi::c_void, irecord : i16, szname : *mut u16, cchnamemax : i16, pcchname : *mut i16, pftype : *mut i16, pfsubtype : *mut i16, plength : *mut i32, pprecision : *mut i16, pscale : *mut i16, pnullable : *mut i16) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLGetDiagField(handletype : i16, handle : *mut ::core::ffi::c_void, recnumber : i16, diagidentifier : i16, diaginfo : *mut ::core::ffi::c_void, bufferlength : i16, stringlength : *mut i16) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLGetDiagFieldA(fhandletype : i16, handle : *mut ::core::ffi::c_void, irecord : i16, fdiagfield : i16, rgbdiaginfo : *mut ::core::ffi::c_void, cbdiaginfomax : i16, pcbdiaginfo : *mut i16) -> i16);
@@ -177,7 +177,7 @@ pub mod Common;
 ::windows_targets::link!("odbc32.dll" "system" fn SQLParamData(statementhandle : *mut ::core::ffi::c_void, value : *mut *mut ::core::ffi::c_void) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLParamOptions(hstmt : *mut ::core::ffi::c_void, crow : u64, pirow : *mut u64) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLParamOptions(hstmt : *mut ::core::ffi::c_void, crow : u32, pirow : *mut u32) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLPrepare(statementhandle : *mut ::core::ffi::c_void, statementtext : *const u8, textlength : i32) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLPrepareA(hstmt : *mut ::core::ffi::c_void, szsqlstr : *const u8, cbsqlstr : i32) -> i16);
@@ -193,26 +193,26 @@ pub mod Common;
 ::windows_targets::link!("odbc32.dll" "system" fn SQLProceduresW(hstmt : *mut ::core::ffi::c_void, szcatalogname : *const u16, cchcatalogname : i16, szschemaname : *const u16, cchschemaname : i16, szprocname : *const u16, cchprocname : i16) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLPutData(statementhandle : *mut ::core::ffi::c_void, data : *const ::core::ffi::c_void, strlen_or_ind : i64) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLPutData(statementhandle : *mut ::core::ffi::c_void, data : *const ::core::ffi::c_void, strlen_or_ind : i32) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLRowCount(statementhandle : *const ::core::ffi::c_void, rowcount : *mut i64) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLRowCount(statementhandle : *const ::core::ffi::c_void, rowcount : *mut i32) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetConnectAttr(connectionhandle : *mut ::core::ffi::c_void, attribute : i32, value : *const ::core::ffi::c_void, stringlength : i32) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetConnectAttrA(hdbc : *mut ::core::ffi::c_void, fattribute : i32, rgbvalue : *const ::core::ffi::c_void, cbvalue : i32) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetConnectAttrW(hdbc : *mut ::core::ffi::c_void, fattribute : i32, rgbvalue : *const ::core::ffi::c_void, cbvalue : i32) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetConnectOption(connectionhandle : *mut ::core::ffi::c_void, option : u16, value : u64) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetConnectOption(connectionhandle : *mut ::core::ffi::c_void, option : u16, value : u32) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetConnectOptionA(hdbc : *mut ::core::ffi::c_void, foption : u16, vparam : u64) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetConnectOptionA(hdbc : *mut ::core::ffi::c_void, foption : u16, vparam : u32) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetConnectOptionW(hdbc : *mut ::core::ffi::c_void, foption : u16, vparam : u64) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetConnectOptionW(hdbc : *mut ::core::ffi::c_void, foption : u16, vparam : u32) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetCursorName(statementhandle : *mut ::core::ffi::c_void, cursorname : *const u8, namelength : i16) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetCursorNameA(hstmt : *mut ::core::ffi::c_void, szcursor : *const u8, cbcursor : i16) -> i16);
@@ -221,26 +221,26 @@ pub mod Common;
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetDescFieldW(descriptorhandle : *mut ::core::ffi::c_void, recnumber : i16, fieldidentifier : i16, value : *mut ::core::ffi::c_void, bufferlength : i32) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetDescRec(descriptorhandle : *mut ::core::ffi::c_void, recnumber : i16, r#type : i16, subtype : i16, length : i64, precision : i16, scale : i16, data : *mut ::core::ffi::c_void, stringlength : *mut i64, indicator : *mut i64) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetDescRec(descriptorhandle : *mut ::core::ffi::c_void, recnumber : i16, r#type : i16, subtype : i16, length : i32, precision : i16, scale : i16, data : *mut ::core::ffi::c_void, stringlength : *mut i32, indicator : *mut i32) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetEnvAttr(environmenthandle : *mut ::core::ffi::c_void, attribute : i32, value : *const ::core::ffi::c_void, stringlength : i32) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetParam(statementhandle : *mut ::core::ffi::c_void, parameternumber : u16, valuetype : i16, parametertype : i16, lengthprecision : u64, parameterscale : i16, parametervalue : *const ::core::ffi::c_void, strlen_or_ind : *mut i64) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetParam(statementhandle : *mut ::core::ffi::c_void, parameternumber : u16, valuetype : i16, parametertype : i16, lengthprecision : u32, parameterscale : i16, parametervalue : *const ::core::ffi::c_void, strlen_or_ind : *mut i32) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetPos(hstmt : *mut ::core::ffi::c_void, irow : u64, foption : u16, flock : u16) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetPos(hstmt : *mut ::core::ffi::c_void, irow : u16, foption : u16, flock : u16) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetScrollOptions(hstmt : *mut ::core::ffi::c_void, fconcurrency : u16, crowkeyset : i64, crowrowset : u16) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetScrollOptions(hstmt : *mut ::core::ffi::c_void, fconcurrency : u16, crowkeyset : i32, crowrowset : u16) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetStmtAttr(statementhandle : *mut ::core::ffi::c_void, attribute : i32, value : *const ::core::ffi::c_void, stringlength : i32) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetStmtAttrW(hstmt : *mut ::core::ffi::c_void, fattribute : i32, rgbvalue : *mut ::core::ffi::c_void, cbvaluemax : i32) -> i16);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetStmtOption(statementhandle : *mut ::core::ffi::c_void, option : u16, value : u64) -> i16);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSetStmtOption(statementhandle : *mut ::core::ffi::c_void, option : u16, value : u32) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSpecialColumns(statementhandle : *mut ::core::ffi::c_void, identifiertype : u16, catalogname : *const u8, namelength1 : i16, schemaname : *const u8, namelength2 : i16, tablename : *const u8, namelength3 : i16, scope : u16, nullable : u16) -> i16);
 ::windows_targets::link!("odbc32.dll" "system" fn SQLSpecialColumnsA(hstmt : *mut ::core::ffi::c_void, fcoltype : u16, szcatalogname : *const u8, cbcatalogname : i16, szschemaname : *const u8, cbschemaname : i16, sztablename : *const u8, cbtablename : i16, fscope : u16, fnullable : u16) -> i16);
@@ -5135,14 +5135,14 @@ impl ::core::clone::Clone for DBBINDEXT {
     }
 }
 #[repr(C, packed(2))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct DBBINDEXT {
     pub pExtension: *mut u8,
     pub ulExtension: usize,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for DBBINDEXT {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for DBBINDEXT {
     fn clone(&self) -> Self {
         *self
@@ -5181,7 +5181,7 @@ impl ::core::clone::Clone for DBBINDING {
 }
 #[repr(C, packed(2))]
 #[doc = "Required features: `\"Win32_System_Com\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_System_Com")]
 pub struct DBBINDING {
     pub iOrdinal: usize,
@@ -5200,10 +5200,10 @@ pub struct DBBINDING {
     pub bPrecision: u8,
     pub bScale: u8,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::marker::Copy for DBBINDING {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::clone::Clone for DBBINDING {
     fn clone(&self) -> Self {
@@ -5237,7 +5237,7 @@ impl ::core::clone::Clone for DBCOLUMNACCESS {
 }
 #[repr(C, packed(2))]
 #[doc = "Required features: `\"Win32_Storage_IndexServer\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Storage_IndexServer")]
 pub struct DBCOLUMNACCESS {
     pub pData: *mut ::core::ffi::c_void,
@@ -5250,10 +5250,10 @@ pub struct DBCOLUMNACCESS {
     pub bPrecision: u8,
     pub bScale: u8,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Storage_IndexServer")]
 impl ::core::marker::Copy for DBCOLUMNACCESS {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Storage_IndexServer")]
 impl ::core::clone::Clone for DBCOLUMNACCESS {
     fn clone(&self) -> Self {
@@ -5288,7 +5288,7 @@ impl ::core::clone::Clone for DBCOLUMNDESC {
 }
 #[repr(C, packed(2))]
 #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_Storage_IndexServer\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`, `\"Win32_System_Variant\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_System_Variant"))]
 pub struct DBCOLUMNDESC {
     pub pwszTypeName: ::windows_sys::core::PWSTR,
@@ -5302,10 +5302,10 @@ pub struct DBCOLUMNDESC {
     pub bPrecision: u8,
     pub bScale: u8,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_System_Variant"))]
 impl ::core::marker::Copy for DBCOLUMNDESC {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_System_Variant"))]
 impl ::core::clone::Clone for DBCOLUMNDESC {
     fn clone(&self) -> Self {
@@ -5339,7 +5339,7 @@ impl ::core::clone::Clone for DBCOLUMNINFO {
 }
 #[repr(C, packed(2))]
 #[doc = "Required features: `\"Win32_Storage_IndexServer\"`, `\"Win32_System_Com\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com"))]
 pub struct DBCOLUMNINFO {
     pub pwszName: ::windows_sys::core::PWSTR,
@@ -5352,10 +5352,10 @@ pub struct DBCOLUMNINFO {
     pub bScale: u8,
     pub columnid: super::super::Storage::IndexServer::DBID,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com"))]
 impl ::core::marker::Copy for DBCOLUMNINFO {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com"))]
 impl ::core::clone::Clone for DBCOLUMNINFO {
     fn clone(&self) -> Self {
@@ -5394,7 +5394,7 @@ impl ::core::clone::Clone for DBCONSTRAINTDESC {
 }
 #[repr(C, packed(2))]
 #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_Storage_IndexServer\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`, `\"Win32_System_Variant\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_System_Variant"))]
 pub struct DBCONSTRAINTDESC {
     pub pConstraintID: *mut super::super::Storage::IndexServer::DBID,
@@ -5412,10 +5412,10 @@ pub struct DBCONSTRAINTDESC {
     pub cReserved: usize,
     pub rgReserved: *mut DBPROPSET,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_System_Variant"))]
 impl ::core::marker::Copy for DBCONSTRAINTDESC {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_System_Variant"))]
 impl ::core::clone::Clone for DBCONSTRAINTDESC {
     fn clone(&self) -> Self {
@@ -5438,15 +5438,15 @@ impl ::core::clone::Clone for DBCOST {
     }
 }
 #[repr(C, packed(2))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct DBCOST {
     pub eKind: u32,
     pub dwUnits: u32,
     pub lValue: i32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for DBCOST {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for DBCOST {
     fn clone(&self) -> Self {
         *self
@@ -5502,15 +5502,15 @@ impl ::core::clone::Clone for DBFAILUREINFO {
     }
 }
 #[repr(C, packed(2))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct DBFAILUREINFO {
     pub hRow: usize,
     pub iColumn: usize,
     pub failure: ::windows_sys::core::HRESULT,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for DBFAILUREINFO {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for DBFAILUREINFO {
     fn clone(&self) -> Self {
         *self
@@ -5532,15 +5532,15 @@ impl ::core::clone::Clone for DBIMPLICITSESSION {
     }
 }
 #[repr(C, packed(2))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct DBIMPLICITSESSION {
     pub pUnkOuter: ::windows_sys::core::IUnknown,
     pub piid: *mut ::windows_sys::core::GUID,
     pub pSession: ::windows_sys::core::IUnknown,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for DBIMPLICITSESSION {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for DBIMPLICITSESSION {
     fn clone(&self) -> Self {
         *self
@@ -5566,16 +5566,16 @@ impl ::core::clone::Clone for DBINDEXCOLUMNDESC {
 }
 #[repr(C, packed(2))]
 #[doc = "Required features: `\"Win32_Storage_IndexServer\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Storage_IndexServer")]
 pub struct DBINDEXCOLUMNDESC {
     pub pColumnID: *mut super::super::Storage::IndexServer::DBID,
     pub eIndexColOrder: u32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Storage_IndexServer")]
 impl ::core::marker::Copy for DBINDEXCOLUMNDESC {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Storage_IndexServer")]
 impl ::core::clone::Clone for DBINDEXCOLUMNDESC {
     fn clone(&self) -> Self {
@@ -5606,7 +5606,7 @@ impl ::core::clone::Clone for DBLITERALINFO {
 }
 #[repr(C, packed(2))]
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub struct DBLITERALINFO {
     pub pwszLiteralValue: ::windows_sys::core::PWSTR,
@@ -5616,10 +5616,10 @@ pub struct DBLITERALINFO {
     pub fSupported: super::super::Foundation::BOOL,
     pub cchMaxLen: u32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DBLITERALINFO {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DBLITERALINFO {
     fn clone(&self) -> Self {
@@ -5652,14 +5652,14 @@ impl ::core::clone::Clone for DBOBJECT {
     }
 }
 #[repr(C, packed(2))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct DBOBJECT {
     pub dwFlags: u32,
     pub iid: ::windows_sys::core::GUID,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for DBOBJECT {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for DBOBJECT {
     fn clone(&self) -> Self {
         *self
@@ -5684,7 +5684,7 @@ impl ::core::clone::Clone for DBPARAMBINDINFO {
     }
 }
 #[repr(C, packed(2))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct DBPARAMBINDINFO {
     pub pwszDataSourceType: ::windows_sys::core::PWSTR,
     pub pwszName: ::windows_sys::core::PWSTR,
@@ -5693,9 +5693,9 @@ pub struct DBPARAMBINDINFO {
     pub bPrecision: u8,
     pub bScale: u8,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for DBPARAMBINDINFO {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for DBPARAMBINDINFO {
     fn clone(&self) -> Self {
         *self
@@ -5727,7 +5727,7 @@ impl ::core::clone::Clone for DBPARAMINFO {
 }
 #[repr(C, packed(2))]
 #[doc = "Required features: `\"Win32_System_Com\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_System_Com")]
 pub struct DBPARAMINFO {
     pub dwFlags: u32,
@@ -5739,10 +5739,10 @@ pub struct DBPARAMINFO {
     pub bPrecision: u8,
     pub bScale: u8,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::marker::Copy for DBPARAMINFO {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::clone::Clone for DBPARAMINFO {
     fn clone(&self) -> Self {
@@ -5765,15 +5765,15 @@ impl ::core::clone::Clone for DBPARAMS {
     }
 }
 #[repr(C, packed(2))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct DBPARAMS {
     pub pData: *mut ::core::ffi::c_void,
     pub cParamSets: usize,
     pub hAccessor: HACCESSOR,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for DBPARAMS {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for DBPARAMS {
     fn clone(&self) -> Self {
         *self
@@ -5802,7 +5802,7 @@ impl ::core::clone::Clone for DBPROP {
 }
 #[repr(C, packed(2))]
 #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_Storage_IndexServer\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`, `\"Win32_System_Variant\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_System_Variant"))]
 pub struct DBPROP {
     pub dwPropertyID: u32,
@@ -5811,10 +5811,10 @@ pub struct DBPROP {
     pub colid: super::super::Storage::IndexServer::DBID,
     pub vValue: super::Variant::VARIANT,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_System_Variant"))]
 impl ::core::marker::Copy for DBPROP {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_System_Variant"))]
 impl ::core::clone::Clone for DBPROP {
     fn clone(&self) -> Self {
@@ -5837,15 +5837,15 @@ impl ::core::clone::Clone for DBPROPIDSET {
     }
 }
 #[repr(C, packed(2))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct DBPROPIDSET {
     pub rgPropertyIDs: *mut u32,
     pub cPropertyIDs: u32,
     pub guidPropertySet: ::windows_sys::core::GUID,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for DBPROPIDSET {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for DBPROPIDSET {
     fn clone(&self) -> Self {
         *self
@@ -5874,7 +5874,7 @@ impl ::core::clone::Clone for DBPROPINFO {
 }
 #[repr(C, packed(2))]
 #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`, `\"Win32_System_Variant\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_System_Variant"))]
 pub struct DBPROPINFO {
     pub pwszDescription: ::windows_sys::core::PWSTR,
@@ -5883,10 +5883,10 @@ pub struct DBPROPINFO {
     pub vtType: super::Variant::VARENUM,
     pub vValues: super::Variant::VARIANT,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_System_Variant"))]
 impl ::core::marker::Copy for DBPROPINFO {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_System_Variant"))]
 impl ::core::clone::Clone for DBPROPINFO {
     fn clone(&self) -> Self {
@@ -5914,17 +5914,17 @@ impl ::core::clone::Clone for DBPROPINFOSET {
 }
 #[repr(C, packed(2))]
 #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`, `\"Win32_System_Variant\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_System_Variant"))]
 pub struct DBPROPINFOSET {
     pub rgPropertyInfos: *mut DBPROPINFO,
     pub cPropertyInfos: u32,
     pub guidPropertySet: ::windows_sys::core::GUID,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_System_Variant"))]
 impl ::core::marker::Copy for DBPROPINFOSET {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_System_Variant"))]
 impl ::core::clone::Clone for DBPROPINFOSET {
     fn clone(&self) -> Self {
@@ -5952,17 +5952,17 @@ impl ::core::clone::Clone for DBPROPSET {
 }
 #[repr(C, packed(2))]
 #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_Storage_IndexServer\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`, `\"Win32_System_Variant\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_System_Variant"))]
 pub struct DBPROPSET {
     pub rgProperties: *mut DBPROP,
     pub cProperties: u32,
     pub guidPropertySet: ::windows_sys::core::GUID,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_System_Variant"))]
 impl ::core::marker::Copy for DBPROPSET {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_System_Variant"))]
 impl ::core::clone::Clone for DBPROPSET {
     fn clone(&self) -> Self {
@@ -5986,16 +5986,16 @@ impl ::core::clone::Clone for DBROWWATCHCHANGE {
     }
 }
 #[repr(C, packed(2))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct DBROWWATCHCHANGE {
     pub hRegion: usize,
     pub eChangeKind: u32,
     pub hRow: usize,
     pub iRow: usize,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for DBROWWATCHCHANGE {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for DBROWWATCHCHANGE {
     fn clone(&self) -> Self {
         *self
@@ -6033,7 +6033,7 @@ impl ::core::clone::Clone for DBTIMESTAMP {
     }
 }
 #[repr(C, packed(2))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct DBTIMESTAMP {
     pub year: i16,
     pub month: u16,
@@ -6043,9 +6043,9 @@ pub struct DBTIMESTAMP {
     pub second: u16,
     pub fraction: u32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for DBTIMESTAMP {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for DBTIMESTAMP {
     fn clone(&self) -> Self {
         *self
@@ -6088,14 +6088,14 @@ impl ::core::clone::Clone for DBVECTOR {
     }
 }
 #[repr(C, packed(2))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct DBVECTOR {
     pub size: usize,
     pub ptr: *mut ::core::ffi::c_void,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for DBVECTOR {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for DBVECTOR {
     fn clone(&self) -> Self {
         *self
@@ -6160,7 +6160,7 @@ impl ::core::clone::Clone for ERRORINFO {
     }
 }
 #[repr(C, packed(2))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct ERRORINFO {
     pub hrError: ::windows_sys::core::HRESULT,
     pub dwMinor: u32,
@@ -6168,9 +6168,9 @@ pub struct ERRORINFO {
     pub iid: ::windows_sys::core::GUID,
     pub dispid: i32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for ERRORINFO {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for ERRORINFO {
     fn clone(&self) -> Self {
         *self
@@ -6296,7 +6296,7 @@ impl ::core::clone::Clone for MDAXISINFO {
     }
 }
 #[repr(C, packed(2))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct MDAXISINFO {
     pub cbSize: usize,
     pub iAxis: usize,
@@ -6305,9 +6305,9 @@ pub struct MDAXISINFO {
     pub rgcColumns: *mut usize,
     pub rgpwszDimensionNames: *mut ::windows_sys::core::PWSTR,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for MDAXISINFO {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for MDAXISINFO {
     fn clone(&self) -> Self {
         *self
@@ -6515,7 +6515,7 @@ impl ::core::clone::Clone for RMTPACK {
 }
 #[repr(C, packed(2))]
 #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_System_Com_StructuredStorage\"`, `\"Win32_System_Ole\"`, `\"Win32_System_Variant\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole", feature = "Win32_System_Variant"))]
 pub struct RMTPACK {
     pub pISeqStream: super::Com::ISequentialStream,
@@ -6533,10 +6533,10 @@ pub struct RMTPACK {
     pub cArray: u32,
     pub rgArray: *mut super::Variant::VARIANT,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole", feature = "Win32_System_Variant"))]
 impl ::core::marker::Copy for RMTPACK {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole", feature = "Win32_System_Variant"))]
 impl ::core::clone::Clone for RMTPACK {
     fn clone(&self) -> Self {
@@ -6620,16 +6620,16 @@ impl ::core::clone::Clone for SEC_OBJECT {
 }
 #[repr(C, packed(2))]
 #[doc = "Required features: `\"Win32_Storage_IndexServer\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Storage_IndexServer")]
 pub struct SEC_OBJECT {
     pub cObjects: u32,
     pub prgObjects: *mut SEC_OBJECT_ELEMENT,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Storage_IndexServer")]
 impl ::core::marker::Copy for SEC_OBJECT {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Storage_IndexServer")]
 impl ::core::clone::Clone for SEC_OBJECT {
     fn clone(&self) -> Self {
@@ -6656,16 +6656,16 @@ impl ::core::clone::Clone for SEC_OBJECT_ELEMENT {
 }
 #[repr(C, packed(2))]
 #[doc = "Required features: `\"Win32_Storage_IndexServer\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Storage_IndexServer")]
 pub struct SEC_OBJECT_ELEMENT {
     pub guidObjectType: ::windows_sys::core::GUID,
     pub ObjectID: super::super::Storage::IndexServer::DBID,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Storage_IndexServer")]
 impl ::core::marker::Copy for SEC_OBJECT_ELEMENT {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Storage_IndexServer")]
 impl ::core::clone::Clone for SEC_OBJECT_ELEMENT {
     fn clone(&self) -> Self {

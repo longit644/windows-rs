@@ -2487,7 +2487,7 @@ impl ::core::clone::Clone for RASCONNA {
 }
 #[repr(C)]
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub struct RASCONNA {
     pub dwSize: u32,
@@ -2502,10 +2502,10 @@ pub struct RASCONNA {
     pub luid: super::super::Foundation::LUID,
     pub guidCorrelationId: ::windows_sys::core::GUID,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASCONNA {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASCONNA {
     fn clone(&self) -> Self {
@@ -2585,7 +2585,7 @@ impl ::core::clone::Clone for RASCONNW {
 }
 #[repr(C)]
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub struct RASCONNW {
     pub dwSize: u32,
@@ -2600,10 +2600,10 @@ pub struct RASCONNW {
     pub luid: super::super::Foundation::LUID,
     pub guidCorrelationId: ::windows_sys::core::GUID,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASCONNW {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASCONNW {
     fn clone(&self) -> Self {
@@ -2706,14 +2706,14 @@ impl ::core::clone::Clone for RASDEVSPECIFICINFO {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct RASDEVSPECIFICINFO {
     pub dwSize: u32,
     pub pbDevSpecificInfo: *mut u8,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for RASDEVSPECIFICINFO {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for RASDEVSPECIFICINFO {
     fn clone(&self) -> Self {
         *self
@@ -2786,7 +2786,7 @@ impl ::core::clone::Clone for RASDIALPARAMSA {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct RASDIALPARAMSA {
     pub dwSize: u32,
     pub szEntryName: [u8; 257],
@@ -2800,9 +2800,9 @@ pub struct RASDIALPARAMSA {
     pub dwIfIndex: u32,
     pub szEncPassword: ::windows_sys::core::PSTR,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for RASDIALPARAMSA {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for RASDIALPARAMSA {
     fn clone(&self) -> Self {
         *self
@@ -2832,7 +2832,7 @@ impl ::core::clone::Clone for RASDIALPARAMSW {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct RASDIALPARAMSW {
     pub dwSize: u32,
     pub szEntryName: [u16; 257],
@@ -2846,9 +2846,9 @@ pub struct RASDIALPARAMSW {
     pub dwIfIndex: u32,
     pub szEncPassword: ::windows_sys::core::PWSTR,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for RASDIALPARAMSW {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for RASDIALPARAMSW {
     fn clone(&self) -> Self {
         *self
@@ -2990,7 +2990,7 @@ impl ::core::clone::Clone for RASENTRYDLGA {
 }
 #[repr(C)]
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub struct RASENTRYDLGA {
     pub dwSize: u32,
@@ -3003,10 +3003,10 @@ pub struct RASENTRYDLGA {
     pub reserved: usize,
     pub reserved2: usize,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASENTRYDLGA {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASENTRYDLGA {
     fn clone(&self) -> Self {
@@ -3040,7 +3040,7 @@ impl ::core::clone::Clone for RASENTRYDLGW {
 }
 #[repr(C)]
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub struct RASENTRYDLGW {
     pub dwSize: u32,
@@ -3053,10 +3053,10 @@ pub struct RASENTRYDLGW {
     pub reserved: usize,
     pub reserved2: usize,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASENTRYDLGW {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASENTRYDLGW {
     fn clone(&self) -> Self {
@@ -3196,7 +3196,7 @@ impl ::core::clone::Clone for RASIKEV2_PROJECTION_INFO {
 }
 #[repr(C)]
 #[doc = "Required features: `\"Win32_Networking_WinSock\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub struct RASIKEV2_PROJECTION_INFO {
     pub dwIPv4NegotiationError: u32,
@@ -3215,10 +3215,10 @@ pub struct RASIKEV2_PROJECTION_INFO {
     pub numIPv6ServerAddresses: u32,
     pub ipv6ServerAddresses: *mut super::super::Networking::WinSock::IN6_ADDR,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for RASIKEV2_PROJECTION_INFO {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for RASIKEV2_PROJECTION_INFO {
     fn clone(&self) -> Self {
@@ -3308,7 +3308,7 @@ impl ::core::clone::Clone for RASPBDLGA {
 }
 #[repr(C)]
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub struct RASPBDLGA {
     pub dwSize: u32,
@@ -3322,10 +3322,10 @@ pub struct RASPBDLGA {
     pub reserved: usize,
     pub reserved2: usize,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASPBDLGA {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASPBDLGA {
     fn clone(&self) -> Self {
@@ -3360,7 +3360,7 @@ impl ::core::clone::Clone for RASPBDLGW {
 }
 #[repr(C)]
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub struct RASPBDLGW {
     pub dwSize: u32,
@@ -3374,10 +3374,10 @@ pub struct RASPBDLGW {
     pub reserved: usize,
     pub reserved2: usize,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASPBDLGW {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASPBDLGW {
     fn clone(&self) -> Self {

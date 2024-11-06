@@ -4762,16 +4762,16 @@ impl ::core::clone::Clone for SERVENT {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct SERVENT {
     pub s_name: ::windows_sys::core::PSTR,
     pub s_aliases: *mut *mut i8,
     pub s_port: i16,
     pub s_proto: ::windows_sys::core::PSTR,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for SERVENT {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for SERVENT {
     fn clone(&self) -> Self {
         *self
@@ -5933,7 +5933,7 @@ impl ::core::clone::Clone for WSADATA {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct WSADATA {
     pub wVersion: u16,
     pub wHighVersion: u16,
@@ -5943,9 +5943,9 @@ pub struct WSADATA {
     pub iMaxUdpDg: u16,
     pub lpVendorInfo: ::windows_sys::core::PSTR,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for WSADATA {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for WSADATA {
     fn clone(&self) -> Self {
         *self

@@ -259,43 +259,43 @@ impl ::core::clone::Clone for DBID_1 {
     }
 }
 #[repr(C, packed(2))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct DBID {
     pub uGuid: DBID_0,
     pub eKind: u32,
     pub uName: DBID_1,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for DBID {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for DBID {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(2))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub union DBID_0 {
     pub guid: ::windows_sys::core::GUID,
     pub pguid: *mut ::windows_sys::core::GUID,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for DBID_0 {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for DBID_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(2))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub union DBID_1 {
     pub pwszName: ::windows_sys::core::PWSTR,
     pub ulPropid: u32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for DBID_1 {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for DBID_1 {
     fn clone(&self) -> Self {
         *self

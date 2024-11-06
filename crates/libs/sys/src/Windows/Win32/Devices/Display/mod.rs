@@ -2583,30 +2583,30 @@ impl ::core::clone::Clone for FD_XFORM {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct FD_XFORM {
     pub eXX: u32,
     pub eXY: u32,
     pub eYX: u32,
     pub eYY: u32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for FD_XFORM {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for FD_XFORM {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct FLOATOBJ {
     pub ul1: u32,
     pub ul2: u32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for FLOATOBJ {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for FLOATOBJ {
     fn clone(&self) -> Self {
         *self
@@ -2631,7 +2631,7 @@ impl ::core::clone::Clone for FLOATOBJ_XFORM {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct FLOATOBJ_XFORM {
     pub eM11: FLOATOBJ,
     pub eM12: FLOATOBJ,
@@ -2640,9 +2640,9 @@ pub struct FLOATOBJ_XFORM {
     pub eDx: FLOATOBJ,
     pub eDy: FLOATOBJ,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for FLOATOBJ_XFORM {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for FLOATOBJ_XFORM {
     fn clone(&self) -> Self {
         *self
@@ -2663,14 +2663,14 @@ impl ::core::clone::Clone for FLOAT_LONG {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub union FLOAT_LONG {
     pub e: u32,
     pub l: i32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for FLOAT_LONG {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for FLOAT_LONG {
     fn clone(&self) -> Self {
         *self
@@ -3136,7 +3136,7 @@ impl ::core::clone::Clone for IFIMETRICS {
 }
 #[repr(C)]
 #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 pub struct IFIMETRICS {
     pub cjThis: u32,
@@ -3199,10 +3199,10 @@ pub struct IFIMETRICS {
     pub ulPanoseCulture: u32,
     pub panose: super::super::Graphics::Gdi::PANOSE,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::marker::Copy for IFIMETRICS {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::clone::Clone for IFIMETRICS {
     fn clone(&self) -> Self {
@@ -3260,7 +3260,7 @@ impl ::core::clone::Clone for LINEATTRS {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct LINEATTRS {
     pub fl: u32,
     pub iJoin: u32,
@@ -3271,9 +3271,9 @@ pub struct LINEATTRS {
     pub pstyle: *mut FLOAT_LONG,
     pub elStyleState: FLOAT_LONG,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for LINEATTRS {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for LINEATTRS {
     fn clone(&self) -> Self {
         *self
@@ -3733,14 +3733,14 @@ impl ::core::clone::Clone for POINTE {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct POINTE {
     pub x: u32,
     pub y: u32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for POINTE {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for POINTE {
     fn clone(&self) -> Self {
         *self
@@ -4501,7 +4501,7 @@ impl ::core::clone::Clone for XFORML {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct XFORML {
     pub eM11: u32,
     pub eM12: u32,
@@ -4510,9 +4510,9 @@ pub struct XFORML {
     pub eDx: u32,
     pub eDy: u32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for XFORML {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for XFORML {
     fn clone(&self) -> Self {
         *self

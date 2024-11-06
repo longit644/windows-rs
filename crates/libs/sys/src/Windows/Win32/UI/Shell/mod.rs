@@ -5706,7 +5706,7 @@ impl ::core::clone::Clone for APPBARDATA {
 }
 #[repr(C, packed(1))]
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub struct APPBARDATA {
     pub cbSize: u32,
@@ -5716,10 +5716,10 @@ pub struct APPBARDATA {
     pub rc: super::super::Foundation::RECT,
     pub lParam: super::super::Foundation::LPARAM,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for APPBARDATA {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for APPBARDATA {
     fn clone(&self) -> Self {
@@ -5799,17 +5799,17 @@ impl ::core::clone::Clone for ASSOCIATIONELEMENT {
 }
 #[repr(C, packed(1))]
 #[doc = "Required features: `\"Win32_System_Registry\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_System_Registry")]
 pub struct ASSOCIATIONELEMENT {
     pub ac: ASSOCCLASS,
     pub hkClass: super::super::System::Registry::HKEY,
     pub pszClass: ::windows_sys::core::PCWSTR,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_System_Registry")]
 impl ::core::marker::Copy for ASSOCIATIONELEMENT {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_System_Registry")]
 impl ::core::clone::Clone for ASSOCIATIONELEMENT {
     fn clone(&self) -> Self {
@@ -6371,7 +6371,7 @@ impl ::core::clone::Clone for DRAGINFOA {
 }
 #[repr(C, packed(1))]
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub struct DRAGINFOA {
     pub uSize: u32,
@@ -6380,10 +6380,10 @@ pub struct DRAGINFOA {
     pub lpFileList: ::windows_sys::core::PSTR,
     pub grfKeyState: u32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DRAGINFOA {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DRAGINFOA {
     fn clone(&self) -> Self {
@@ -6413,7 +6413,7 @@ impl ::core::clone::Clone for DRAGINFOW {
 }
 #[repr(C, packed(1))]
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub struct DRAGINFOW {
     pub uSize: u32,
@@ -6422,10 +6422,10 @@ pub struct DRAGINFOW {
     pub lpFileList: ::windows_sys::core::PWSTR,
     pub grfKeyState: u32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DRAGINFOW {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DRAGINFOW {
     fn clone(&self) -> Self {
@@ -6902,7 +6902,7 @@ impl ::core::clone::Clone for NOTIFYICONDATAA_0 {
 }
 #[repr(C, packed(1))]
 #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_UI_WindowsAndMessaging\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
 pub struct NOTIFYICONDATAA {
     pub cbSize: u32,
@@ -6921,10 +6921,10 @@ pub struct NOTIFYICONDATAA {
     pub guidItem: ::windows_sys::core::GUID,
     pub hBalloonIcon: super::WindowsAndMessaging::HICON,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::marker::Copy for NOTIFYICONDATAA {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::clone::Clone for NOTIFYICONDATAA {
     fn clone(&self) -> Self {
@@ -6933,16 +6933,16 @@ impl ::core::clone::Clone for NOTIFYICONDATAA {
 }
 #[repr(C, packed(1))]
 #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_UI_WindowsAndMessaging\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
 pub union NOTIFYICONDATAA_0 {
     pub uTimeout: u32,
     pub uVersion: u32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::marker::Copy for NOTIFYICONDATAA_0 {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::clone::Clone for NOTIFYICONDATAA_0 {
     fn clone(&self) -> Self {
@@ -7000,7 +7000,7 @@ impl ::core::clone::Clone for NOTIFYICONDATAW_0 {
 }
 #[repr(C, packed(1))]
 #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_UI_WindowsAndMessaging\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
 pub struct NOTIFYICONDATAW {
     pub cbSize: u32,
@@ -7019,10 +7019,10 @@ pub struct NOTIFYICONDATAW {
     pub guidItem: ::windows_sys::core::GUID,
     pub hBalloonIcon: super::WindowsAndMessaging::HICON,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::marker::Copy for NOTIFYICONDATAW {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::clone::Clone for NOTIFYICONDATAW {
     fn clone(&self) -> Self {
@@ -7031,16 +7031,16 @@ impl ::core::clone::Clone for NOTIFYICONDATAW {
 }
 #[repr(C, packed(1))]
 #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_UI_WindowsAndMessaging\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
 pub union NOTIFYICONDATAW_0 {
     pub uTimeout: u32,
     pub uVersion: u32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::marker::Copy for NOTIFYICONDATAW_0 {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::clone::Clone for NOTIFYICONDATAW_0 {
     fn clone(&self) -> Self {
@@ -7069,7 +7069,7 @@ impl ::core::clone::Clone for NOTIFYICONIDENTIFIER {
 }
 #[repr(C, packed(1))]
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub struct NOTIFYICONIDENTIFIER {
     pub cbSize: u32,
@@ -7077,10 +7077,10 @@ pub struct NOTIFYICONIDENTIFIER {
     pub uID: u32,
     pub guidItem: ::windows_sys::core::GUID,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NOTIFYICONIDENTIFIER {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NOTIFYICONIDENTIFIER {
     fn clone(&self) -> Self {
@@ -7203,7 +7203,7 @@ impl ::core::clone::Clone for OPEN_PRINTER_PROPS_INFOA {
 }
 #[repr(C, packed(1))]
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub struct OPEN_PRINTER_PROPS_INFOA {
     pub dwSize: u32,
@@ -7212,10 +7212,10 @@ pub struct OPEN_PRINTER_PROPS_INFOA {
     pub dwFlags: u32,
     pub bModal: super::super::Foundation::BOOL,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OPEN_PRINTER_PROPS_INFOA {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OPEN_PRINTER_PROPS_INFOA {
     fn clone(&self) -> Self {
@@ -7245,7 +7245,7 @@ impl ::core::clone::Clone for OPEN_PRINTER_PROPS_INFOW {
 }
 #[repr(C, packed(1))]
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub struct OPEN_PRINTER_PROPS_INFOW {
     pub dwSize: u32,
@@ -7254,10 +7254,10 @@ pub struct OPEN_PRINTER_PROPS_INFOW {
     pub dwFlags: u32,
     pub bModal: super::super::Foundation::BOOL,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OPEN_PRINTER_PROPS_INFOW {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OPEN_PRINTER_PROPS_INFOW {
     fn clone(&self) -> Self {
@@ -7615,7 +7615,7 @@ impl ::core::clone::Clone for SHCREATEPROCESSINFOW {
 }
 #[repr(C, packed(1))]
 #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_Security\"`, `\"Win32_System_Threading\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_System_Threading"))]
 pub struct SHCREATEPROCESSINFOW {
     pub cbSize: u32,
@@ -7632,10 +7632,10 @@ pub struct SHCREATEPROCESSINFOW {
     pub lpStartupInfo: *mut super::super::System::Threading::STARTUPINFOW,
     pub lpProcessInformation: *mut super::super::System::Threading::PROCESS_INFORMATION,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_System_Threading"))]
 impl ::core::marker::Copy for SHCREATEPROCESSINFOW {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_System_Threading"))]
 impl ::core::clone::Clone for SHCREATEPROCESSINFOW {
     fn clone(&self) -> Self {
@@ -7777,7 +7777,7 @@ impl ::core::clone::Clone for SHELLEXECUTEINFOA_0 {
 }
 #[repr(C, packed(1))]
 #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_System_Registry\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
 pub struct SHELLEXECUTEINFOA {
     pub cbSize: u32,
@@ -7796,10 +7796,10 @@ pub struct SHELLEXECUTEINFOA {
     pub Anonymous: SHELLEXECUTEINFOA_0,
     pub hProcess: super::super::Foundation::HANDLE,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
 impl ::core::marker::Copy for SHELLEXECUTEINFOA {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
 impl ::core::clone::Clone for SHELLEXECUTEINFOA {
     fn clone(&self) -> Self {
@@ -7808,16 +7808,16 @@ impl ::core::clone::Clone for SHELLEXECUTEINFOA {
 }
 #[repr(C, packed(1))]
 #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_System_Registry\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
 pub union SHELLEXECUTEINFOA_0 {
     pub hIcon: super::super::Foundation::HANDLE,
     pub hMonitor: super::super::Foundation::HANDLE,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
 impl ::core::marker::Copy for SHELLEXECUTEINFOA_0 {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
 impl ::core::clone::Clone for SHELLEXECUTEINFOA_0 {
     fn clone(&self) -> Self {
@@ -7875,7 +7875,7 @@ impl ::core::clone::Clone for SHELLEXECUTEINFOW_0 {
 }
 #[repr(C, packed(1))]
 #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_System_Registry\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
 pub struct SHELLEXECUTEINFOW {
     pub cbSize: u32,
@@ -7894,10 +7894,10 @@ pub struct SHELLEXECUTEINFOW {
     pub Anonymous: SHELLEXECUTEINFOW_0,
     pub hProcess: super::super::Foundation::HANDLE,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
 impl ::core::marker::Copy for SHELLEXECUTEINFOW {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
 impl ::core::clone::Clone for SHELLEXECUTEINFOW {
     fn clone(&self) -> Self {
@@ -7906,16 +7906,16 @@ impl ::core::clone::Clone for SHELLEXECUTEINFOW {
 }
 #[repr(C, packed(1))]
 #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_System_Registry\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
 pub union SHELLEXECUTEINFOW_0 {
     pub hIcon: super::super::Foundation::HANDLE,
     pub hMonitor: super::super::Foundation::HANDLE,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
 impl ::core::marker::Copy for SHELLEXECUTEINFOW_0 {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
 impl ::core::clone::Clone for SHELLEXECUTEINFOW_0 {
     fn clone(&self) -> Self {
@@ -8000,7 +8000,7 @@ impl ::core::clone::Clone for SHFILEINFOA {
 }
 #[repr(C, packed(1))]
 #[doc = "Required features: `\"Win32_UI_WindowsAndMessaging\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub struct SHFILEINFOA {
     pub hIcon: super::WindowsAndMessaging::HICON,
@@ -8009,10 +8009,10 @@ pub struct SHFILEINFOA {
     pub szDisplayName: [u8; 260],
     pub szTypeName: [u8; 80],
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for SHFILEINFOA {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for SHFILEINFOA {
     fn clone(&self) -> Self {
@@ -8042,7 +8042,7 @@ impl ::core::clone::Clone for SHFILEINFOW {
 }
 #[repr(C, packed(1))]
 #[doc = "Required features: `\"Win32_UI_WindowsAndMessaging\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub struct SHFILEINFOW {
     pub hIcon: super::WindowsAndMessaging::HICON,
@@ -8051,10 +8051,10 @@ pub struct SHFILEINFOW {
     pub szDisplayName: [u16; 260],
     pub szTypeName: [u16; 80],
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for SHFILEINFOW {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for SHFILEINFOW {
     fn clone(&self) -> Self {
@@ -8087,7 +8087,7 @@ impl ::core::clone::Clone for SHFILEOPSTRUCTA {
 }
 #[repr(C, packed(1))]
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub struct SHFILEOPSTRUCTA {
     pub hwnd: super::super::Foundation::HWND,
@@ -8099,10 +8099,10 @@ pub struct SHFILEOPSTRUCTA {
     pub hNameMappings: *mut ::core::ffi::c_void,
     pub lpszProgressTitle: ::windows_sys::core::PCSTR,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SHFILEOPSTRUCTA {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SHFILEOPSTRUCTA {
     fn clone(&self) -> Self {
@@ -8135,7 +8135,7 @@ impl ::core::clone::Clone for SHFILEOPSTRUCTW {
 }
 #[repr(C, packed(1))]
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub struct SHFILEOPSTRUCTW {
     pub hwnd: super::super::Foundation::HWND,
@@ -8147,10 +8147,10 @@ pub struct SHFILEOPSTRUCTW {
     pub hNameMappings: *mut ::core::ffi::c_void,
     pub lpszProgressTitle: ::windows_sys::core::PCWSTR,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SHFILEOPSTRUCTW {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SHFILEOPSTRUCTW {
     fn clone(&self) -> Self {
@@ -8198,16 +8198,16 @@ impl ::core::clone::Clone for SHNAMEMAPPINGA {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct SHNAMEMAPPINGA {
     pub pszOldPath: ::windows_sys::core::PSTR,
     pub pszNewPath: ::windows_sys::core::PSTR,
     pub cchOldPath: i32,
     pub cchNewPath: i32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for SHNAMEMAPPINGA {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for SHNAMEMAPPINGA {
     fn clone(&self) -> Self {
         *self
@@ -8230,16 +8230,16 @@ impl ::core::clone::Clone for SHNAMEMAPPINGW {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct SHNAMEMAPPINGW {
     pub pszOldPath: ::windows_sys::core::PWSTR,
     pub pszNewPath: ::windows_sys::core::PWSTR,
     pub cchOldPath: i32,
     pub cchNewPath: i32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for SHNAMEMAPPINGW {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for SHNAMEMAPPINGW {
     fn clone(&self) -> Self {
         *self
@@ -8261,15 +8261,15 @@ impl ::core::clone::Clone for SHQUERYRBINFO {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct SHQUERYRBINFO {
     pub cbSize: u32,
     pub i64Size: i64,
     pub i64NumItems: i64,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for SHQUERYRBINFO {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for SHQUERYRBINFO {
     fn clone(&self) -> Self {
         *self
@@ -8298,7 +8298,7 @@ impl ::core::clone::Clone for SHSTOCKICONINFO {
 }
 #[repr(C, packed(1))]
 #[doc = "Required features: `\"Win32_UI_WindowsAndMessaging\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub struct SHSTOCKICONINFO {
     pub cbSize: u32,
@@ -8307,10 +8307,10 @@ pub struct SHSTOCKICONINFO {
     pub iIcon: i32,
     pub szPath: [u16; 260],
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for SHSTOCKICONINFO {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for SHSTOCKICONINFO {
     fn clone(&self) -> Self {

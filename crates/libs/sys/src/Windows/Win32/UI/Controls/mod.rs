@@ -8768,7 +8768,7 @@ impl ::core::clone::Clone for TBBUTTON {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct TBBUTTON {
     pub iBitmap: i32,
     pub idCommand: i32,
@@ -8778,9 +8778,9 @@ pub struct TBBUTTON {
     pub dwData: usize,
     pub iString: isize,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for TBBUTTON {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for TBBUTTON {
     fn clone(&self) -> Self {
         *self

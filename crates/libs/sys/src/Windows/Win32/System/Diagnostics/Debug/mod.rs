@@ -16,7 +16,7 @@ pub mod Extensions;
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_System_SystemInformation")]
 ::windows_targets::link!("imagehlp.dll" "system" #[doc = "Required features: `\"Win32_System_SystemInformation\"`"] fn CheckSumMappedFile(baseaddress : *const ::core::ffi::c_void, filelength : u32, headersum : *mut u32, checksum : *mut u32) -> *mut IMAGE_NT_HEADERS64);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_System_SystemInformation")]
 ::windows_targets::link!("imagehlp.dll" "system" #[doc = "Required features: `\"Win32_System_SystemInformation\"`"] fn CheckSumMappedFile(baseaddress : *const ::core::ffi::c_void, filelength : u32, headersum : *mut u32, checksum : *mut u32) -> *mut IMAGE_NT_HEADERS32);
 ::windows_targets::link!("advapi32.dll" "system" fn CloseThreadWaitChainSession(wcthandle : *const ::core::ffi::c_void) -> ());
@@ -49,7 +49,7 @@ pub mod Extensions;
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn EnumDirTree(hprocess : super::super::super::Foundation:: HANDLE, rootpath : ::windows_sys::core::PCSTR, inputpathname : ::windows_sys::core::PCSTR, outputpathbuffer : ::windows_sys::core::PSTR, cb : PENUMDIRTREE_CALLBACK, data : *const ::core::ffi::c_void) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn EnumDirTreeW(hprocess : super::super::super::Foundation:: HANDLE, rootpath : ::windows_sys::core::PCWSTR, inputpathname : ::windows_sys::core::PCWSTR, outputpathbuffer : ::windows_sys::core::PWSTR, cb : PENUMDIRTREE_CALLBACKW, data : *const ::core::ffi::c_void) -> super::super::super::Foundation:: BOOL);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn EnumerateLoadedModules(hprocess : super::super::super::Foundation:: HANDLE, enumloadedmodulescallback : PENUMLOADED_MODULES_CALLBACK, usercontext : *const ::core::ffi::c_void) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
@@ -89,7 +89,7 @@ pub mod Extensions;
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel", feature = "Win32_System_SystemInformation"))]
 ::windows_targets::link!("imagehlp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_System_Kernel\"`, `\"Win32_System_SystemInformation\"`"] fn GetImageConfigInformation(loadedimage : *const LOADED_IMAGE, imageconfiginformation : *mut IMAGE_LOAD_CONFIG_DIRECTORY64) -> super::super::super::Foundation:: BOOL);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel", feature = "Win32_System_SystemInformation"))]
 ::windows_targets::link!("imagehlp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_System_Kernel\"`, `\"Win32_System_SystemInformation\"`"] fn GetImageConfigInformation(loadedimage : *const LOADED_IMAGE, imageconfiginformation : *mut IMAGE_LOAD_CONFIG_DIRECTORY32) -> super::super::super::Foundation:: BOOL);
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel", feature = "Win32_System_SystemInformation"))]
@@ -126,7 +126,7 @@ pub mod Extensions;
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_System_SystemInformation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_System_SystemInformation\"`"] fn ImageNtHeader(base : *const ::core::ffi::c_void) -> *mut IMAGE_NT_HEADERS64);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_System_SystemInformation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_System_SystemInformation\"`"] fn ImageNtHeader(base : *const ::core::ffi::c_void) -> *mut IMAGE_NT_HEADERS32);
 #[cfg(feature = "Win32_Foundation")]
@@ -134,13 +134,13 @@ pub mod Extensions;
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_System_SystemInformation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_System_SystemInformation\"`"] fn ImageRvaToSection(ntheaders : *const IMAGE_NT_HEADERS64, base : *const ::core::ffi::c_void, rva : u32) -> *mut IMAGE_SECTION_HEADER);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_System_SystemInformation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_System_SystemInformation\"`"] fn ImageRvaToSection(ntheaders : *const IMAGE_NT_HEADERS32, base : *const ::core::ffi::c_void, rva : u32) -> *mut IMAGE_SECTION_HEADER);
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_System_SystemInformation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_System_SystemInformation\"`"] fn ImageRvaToVa(ntheaders : *const IMAGE_NT_HEADERS64, base : *const ::core::ffi::c_void, rva : u32, lastrvasection : *const *const IMAGE_SECTION_HEADER) -> *mut ::core::ffi::c_void);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_System_SystemInformation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_System_SystemInformation\"`"] fn ImageRvaToVa(ntheaders : *const IMAGE_NT_HEADERS32, base : *const ::core::ffi::c_void, rva : u32, lastrvasection : *const *const IMAGE_SECTION_HEADER) -> *mut ::core::ffi::c_void);
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel", feature = "Win32_System_SystemInformation"))]
@@ -259,7 +259,7 @@ pub mod Extensions;
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel", feature = "Win32_System_SystemInformation"))]
 ::windows_targets::link!("imagehlp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_System_Kernel\"`, `\"Win32_System_SystemInformation\"`"] fn SetImageConfigInformation(loadedimage : *mut LOADED_IMAGE, imageconfiginformation : *const IMAGE_LOAD_CONFIG_DIRECTORY64) -> super::super::super::Foundation:: BOOL);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel", feature = "Win32_System_SystemInformation"))]
 ::windows_targets::link!("imagehlp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_System_Kernel\"`, `\"Win32_System_SystemInformation\"`"] fn SetImageConfigInformation(loadedimage : *mut LOADED_IMAGE, imageconfiginformation : *const IMAGE_LOAD_CONFIG_DIRECTORY32) -> super::super::super::Foundation:: BOOL);
 ::windows_targets::link!("dbghelp.dll" "system" fn SetSymLoadError(error : u32) -> ());
@@ -272,7 +272,7 @@ pub mod Extensions;
 #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
 ::windows_targets::link!("kernel32.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_System_Kernel\"`"] fn SetXStateFeaturesMask(context : *mut CONTEXT, featuremask : u64) -> super::super::super::Foundation:: BOOL);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn StackWalk(machinetype : u32, hprocess : super::super::super::Foundation:: HANDLE, hthread : super::super::super::Foundation:: HANDLE, stackframe : *mut STACKFRAME, contextrecord : *mut ::core::ffi::c_void, readmemoryroutine : PREAD_PROCESS_MEMORY_ROUTINE, functiontableaccessroutine : PFUNCTION_TABLE_ACCESS_ROUTINE, getmodulebaseroutine : PGET_MODULE_BASE_ROUTINE, translateaddress : PTRANSLATE_ADDRESS_ROUTINE) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
@@ -339,19 +339,19 @@ pub mod Extensions;
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymEnumTypesByNameW(hprocess : super::super::super::Foundation:: HANDLE, baseofdll : u64, mask : ::windows_sys::core::PCWSTR, enumsymbolscallback : PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext : *const ::core::ffi::c_void) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymEnumTypesW(hprocess : super::super::super::Foundation:: HANDLE, baseofdll : u64, enumsymbolscallback : PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext : *const ::core::ffi::c_void) -> super::super::super::Foundation:: BOOL);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymEnumerateModules(hprocess : super::super::super::Foundation:: HANDLE, enummodulescallback : PSYM_ENUMMODULES_CALLBACK, usercontext : *const ::core::ffi::c_void) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymEnumerateModules64(hprocess : super::super::super::Foundation:: HANDLE, enummodulescallback : PSYM_ENUMMODULES_CALLBACK64, usercontext : *const ::core::ffi::c_void) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymEnumerateModulesW64(hprocess : super::super::super::Foundation:: HANDLE, enummodulescallback : PSYM_ENUMMODULES_CALLBACKW64, usercontext : *const ::core::ffi::c_void) -> super::super::super::Foundation:: BOOL);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymEnumerateSymbols(hprocess : super::super::super::Foundation:: HANDLE, baseofdll : u32, enumsymbolscallback : PSYM_ENUMSYMBOLS_CALLBACK, usercontext : *const ::core::ffi::c_void) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymEnumerateSymbols64(hprocess : super::super::super::Foundation:: HANDLE, baseofdll : u64, enumsymbolscallback : PSYM_ENUMSYMBOLS_CALLBACK64, usercontext : *const ::core::ffi::c_void) -> super::super::super::Foundation:: BOOL);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymEnumerateSymbolsW(hprocess : super::super::super::Foundation:: HANDLE, baseofdll : u32, enumsymbolscallback : PSYM_ENUMSYMBOLS_CALLBACKW, usercontext : *const ::core::ffi::c_void) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
@@ -388,7 +388,7 @@ pub mod Extensions;
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymFromToken(hprocess : super::super::super::Foundation:: HANDLE, base : u64, token : u32, symbol : *mut SYMBOL_INFO) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymFromTokenW(hprocess : super::super::super::Foundation:: HANDLE, base : u64, token : u32, symbol : *mut SYMBOL_INFOW) -> super::super::super::Foundation:: BOOL);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymFunctionTableAccess(hprocess : super::super::super::Foundation:: HANDLE, addrbase : u32) -> *mut ::core::ffi::c_void);
 #[cfg(feature = "Win32_Foundation")]
@@ -401,7 +401,7 @@ pub mod Extensions;
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetFileLineOffsets64(hprocess : super::super::super::Foundation:: HANDLE, modulename : ::windows_sys::core::PCSTR, filename : ::windows_sys::core::PCSTR, buffer : *mut u64, bufferlines : u32) -> u32);
 ::windows_targets::link!("dbghelp.dll" "system" fn SymGetHomeDirectory(r#type : u32, dir : ::windows_sys::core::PSTR, size : usize) -> ::windows_sys::core::PSTR);
 ::windows_targets::link!("dbghelp.dll" "system" fn SymGetHomeDirectoryW(r#type : u32, dir : ::windows_sys::core::PWSTR, size : usize) -> ::windows_sys::core::PWSTR);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetLineFromAddr(hprocess : super::super::super::Foundation:: HANDLE, dwaddr : u32, pdwdisplacement : *mut u32, line : *mut IMAGEHLP_LINE) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
@@ -412,38 +412,38 @@ pub mod Extensions;
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetLineFromInlineContext(hprocess : super::super::super::Foundation:: HANDLE, qwaddr : u64, inlinecontext : u32, qwmodulebaseaddress : u64, pdwdisplacement : *mut u32, line64 : *mut IMAGEHLP_LINE64) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetLineFromInlineContextW(hprocess : super::super::super::Foundation:: HANDLE, dwaddr : u64, inlinecontext : u32, qwmodulebaseaddress : u64, pdwdisplacement : *mut u32, line : *mut IMAGEHLP_LINEW64) -> super::super::super::Foundation:: BOOL);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetLineFromName(hprocess : super::super::super::Foundation:: HANDLE, modulename : ::windows_sys::core::PCSTR, filename : ::windows_sys::core::PCSTR, dwlinenumber : u32, pldisplacement : *mut i32, line : *mut IMAGEHLP_LINE) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetLineFromName64(hprocess : super::super::super::Foundation:: HANDLE, modulename : ::windows_sys::core::PCSTR, filename : ::windows_sys::core::PCSTR, dwlinenumber : u32, pldisplacement : *mut i32, line : *mut IMAGEHLP_LINE64) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetLineFromNameW64(hprocess : super::super::super::Foundation:: HANDLE, modulename : ::windows_sys::core::PCWSTR, filename : ::windows_sys::core::PCWSTR, dwlinenumber : u32, pldisplacement : *mut i32, line : *mut IMAGEHLP_LINEW64) -> super::super::super::Foundation:: BOOL);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetLineNext(hprocess : super::super::super::Foundation:: HANDLE, line : *mut IMAGEHLP_LINE) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetLineNext64(hprocess : super::super::super::Foundation:: HANDLE, line : *mut IMAGEHLP_LINE64) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetLineNextW64(hprocess : super::super::super::Foundation:: HANDLE, line : *mut IMAGEHLP_LINEW64) -> super::super::super::Foundation:: BOOL);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetLinePrev(hprocess : super::super::super::Foundation:: HANDLE, line : *mut IMAGEHLP_LINE) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetLinePrev64(hprocess : super::super::super::Foundation:: HANDLE, line : *mut IMAGEHLP_LINE64) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetLinePrevW64(hprocess : super::super::super::Foundation:: HANDLE, line : *mut IMAGEHLP_LINEW64) -> super::super::super::Foundation:: BOOL);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetModuleBase(hprocess : super::super::super::Foundation:: HANDLE, dwaddr : u32) -> u32);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetModuleBase64(hprocess : super::super::super::Foundation:: HANDLE, qwaddr : u64) -> u64);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetModuleInfo(hprocess : super::super::super::Foundation:: HANDLE, dwaddr : u32, moduleinfo : *mut IMAGEHLP_MODULE) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetModuleInfo64(hprocess : super::super::super::Foundation:: HANDLE, qwaddr : u64, moduleinfo : *mut IMAGEHLP_MODULE64) -> super::super::super::Foundation:: BOOL);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetModuleInfoW(hprocess : super::super::super::Foundation:: HANDLE, dwaddr : u32, moduleinfo : *mut IMAGEHLP_MODULEW) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
@@ -487,22 +487,22 @@ pub mod Extensions;
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetSourceVarFromToken(hprocess : super::super::super::Foundation:: HANDLE, token : *const ::core::ffi::c_void, params : ::windows_sys::core::PCSTR, varname : ::windows_sys::core::PCSTR, value : ::windows_sys::core::PSTR, size : u32) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetSourceVarFromTokenW(hprocess : super::super::super::Foundation:: HANDLE, token : *const ::core::ffi::c_void, params : ::windows_sys::core::PCWSTR, varname : ::windows_sys::core::PCWSTR, value : ::windows_sys::core::PWSTR, size : u32) -> super::super::super::Foundation:: BOOL);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetSymFromAddr(hprocess : super::super::super::Foundation:: HANDLE, dwaddr : u32, pdwdisplacement : *mut u32, symbol : *mut IMAGEHLP_SYMBOL) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetSymFromAddr64(hprocess : super::super::super::Foundation:: HANDLE, qwaddr : u64, pdwdisplacement : *mut u64, symbol : *mut IMAGEHLP_SYMBOL64) -> super::super::super::Foundation:: BOOL);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetSymFromName(hprocess : super::super::super::Foundation:: HANDLE, name : ::windows_sys::core::PCSTR, symbol : *mut IMAGEHLP_SYMBOL) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetSymFromName64(hprocess : super::super::super::Foundation:: HANDLE, name : ::windows_sys::core::PCSTR, symbol : *mut IMAGEHLP_SYMBOL64) -> super::super::super::Foundation:: BOOL);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetSymNext(hprocess : super::super::super::Foundation:: HANDLE, symbol : *mut IMAGEHLP_SYMBOL) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetSymNext64(hprocess : super::super::super::Foundation:: HANDLE, symbol : *mut IMAGEHLP_SYMBOL64) -> super::super::super::Foundation:: BOOL);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymGetSymPrev(hprocess : super::super::super::Foundation:: HANDLE, symbol : *mut IMAGEHLP_SYMBOL) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
@@ -525,7 +525,7 @@ pub mod Extensions;
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymInitialize(hprocess : super::super::super::Foundation:: HANDLE, usersearchpath : ::windows_sys::core::PCSTR, finvadeprocess : super::super::super::Foundation:: BOOL) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymInitializeW(hprocess : super::super::super::Foundation:: HANDLE, usersearchpath : ::windows_sys::core::PCWSTR, finvadeprocess : super::super::super::Foundation:: BOOL) -> super::super::super::Foundation:: BOOL);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymLoadModule(hprocess : super::super::super::Foundation:: HANDLE, hfile : super::super::super::Foundation:: HANDLE, imagename : ::windows_sys::core::PCSTR, modulename : ::windows_sys::core::PCSTR, baseofdll : u32, sizeofdll : u32) -> u32);
 #[cfg(feature = "Win32_Foundation")]
@@ -556,14 +556,14 @@ pub mod Extensions;
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymQueryInlineTrace(hprocess : super::super::super::Foundation:: HANDLE, startaddress : u64, startcontext : u32, startretaddress : u64, curaddress : u64, curcontext : *mut u32, curframeindex : *mut u32) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymRefreshModuleList(hprocess : super::super::super::Foundation:: HANDLE) -> super::super::super::Foundation:: BOOL);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymRegisterCallback(hprocess : super::super::super::Foundation:: HANDLE, callbackfunction : PSYMBOL_REGISTERED_CALLBACK, usercontext : *const ::core::ffi::c_void) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymRegisterCallback64(hprocess : super::super::super::Foundation:: HANDLE, callbackfunction : PSYMBOL_REGISTERED_CALLBACK64, usercontext : u64) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymRegisterCallbackW64(hprocess : super::super::super::Foundation:: HANDLE, callbackfunction : PSYMBOL_REGISTERED_CALLBACK64, usercontext : u64) -> super::super::super::Foundation:: BOOL);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymRegisterFunctionEntryCallback(hprocess : super::super::super::Foundation:: HANDLE, callbackfunction : PSYMBOL_FUNCENTRY_CALLBACK, usercontext : *const ::core::ffi::c_void) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
@@ -625,12 +625,12 @@ pub mod Extensions;
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymSrvStoreSupplement(hprocess : super::super::super::Foundation:: HANDLE, srvpath : ::windows_sys::core::PCSTR, node : ::windows_sys::core::PCSTR, file : ::windows_sys::core::PCSTR, flags : u32) -> ::windows_sys::core::PCSTR);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymSrvStoreSupplementW(hprocess : super::super::super::Foundation:: HANDLE, sympath : ::windows_sys::core::PCWSTR, node : ::windows_sys::core::PCWSTR, file : ::windows_sys::core::PCWSTR, flags : u32) -> ::windows_sys::core::PCWSTR);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymUnDName(sym : *const IMAGEHLP_SYMBOL, undecname : ::windows_sys::core::PSTR, undecnamelength : u32) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymUnDName64(sym : *const IMAGEHLP_SYMBOL64, undecname : ::windows_sys::core::PSTR, undecnamelength : u32) -> super::super::super::Foundation:: BOOL);
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 ::windows_targets::link!("dbghelp.dll" "system" #[doc = "Required features: `\"Win32_Foundation\"`"] fn SymUnloadModule(hprocess : super::super::super::Foundation:: HANDLE, baseofdll : u32) -> super::super::super::Foundation:: BOOL);
 #[cfg(feature = "Win32_Foundation")]
@@ -2362,15 +2362,15 @@ pub type WHEA_ERROR_SOURCE_STATE = i32;
 pub type WHEA_ERROR_SOURCE_TYPE = i32;
 pub type WOW64_CONTEXT_FLAGS = u32;
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct ADDRESS {
     pub Offset: u32,
     pub Segment: u16,
     pub Mode: ADDRESS_MODE,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for ADDRESS {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for ADDRESS {
     fn clone(&self) -> Self {
         *self
@@ -2796,7 +2796,7 @@ impl ::core::clone::Clone for CONTEXT_0_0 {
 }
 #[repr(C)]
 #[doc = "Required features: `\"Win32_System_Kernel\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_System_Kernel")]
 pub struct CONTEXT {
     pub ContextFlags: CONTEXT_FLAGS,
@@ -2825,10 +2825,10 @@ pub struct CONTEXT {
     pub SegSs: u32,
     pub ExtendedRegisters: [u8; 512],
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_System_Kernel")]
 impl ::core::marker::Copy for CONTEXT {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_System_Kernel")]
 impl ::core::clone::Clone for CONTEXT {
     fn clone(&self) -> Self {
@@ -3368,7 +3368,7 @@ impl ::core::clone::Clone for IMAGEHLP_CBA_READ_MEMORY {
 }
 #[repr(C)]
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub struct IMAGEHLP_DEFERRED_SYMBOL_LOAD {
     pub SizeOfStruct: u32,
@@ -3379,10 +3379,10 @@ pub struct IMAGEHLP_DEFERRED_SYMBOL_LOAD {
     pub Reparse: super::super::super::Foundation::BOOLEAN,
     pub hFile: super::super::super::Foundation::HANDLE,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IMAGEHLP_DEFERRED_SYMBOL_LOAD {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IMAGEHLP_DEFERRED_SYMBOL_LOAD {
     fn clone(&self) -> Self {
@@ -3432,16 +3432,16 @@ impl ::core::clone::Clone for IMAGEHLP_DEFERRED_SYMBOL_LOADW64 {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct IMAGEHLP_DUPLICATE_SYMBOL {
     pub SizeOfStruct: u32,
     pub NumberOfDups: u32,
     pub Symbol: *mut IMAGEHLP_SYMBOL,
     pub SelectedSymbol: u32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for IMAGEHLP_DUPLICATE_SYMBOL {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for IMAGEHLP_DUPLICATE_SYMBOL {
     fn clone(&self) -> Self {
         *self
@@ -3500,7 +3500,7 @@ impl ::core::clone::Clone for IMAGEHLP_JIT_SYMBOLMAP {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct IMAGEHLP_LINE {
     pub SizeOfStruct: u32,
     pub Key: *mut ::core::ffi::c_void,
@@ -3508,9 +3508,9 @@ pub struct IMAGEHLP_LINE {
     pub FileName: ::windows_sys::core::PSTR,
     pub Address: u32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for IMAGEHLP_LINE {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for IMAGEHLP_LINE {
     fn clone(&self) -> Self {
         *self
@@ -3531,7 +3531,7 @@ impl ::core::clone::Clone for IMAGEHLP_LINE64 {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct IMAGEHLP_LINEW {
     pub SizeOfStruct: u32,
     pub Key: *mut ::core::ffi::c_void,
@@ -3539,9 +3539,9 @@ pub struct IMAGEHLP_LINEW {
     pub FileName: ::windows_sys::core::PSTR,
     pub Address: u64,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for IMAGEHLP_LINEW {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for IMAGEHLP_LINEW {
     fn clone(&self) -> Self {
         *self
@@ -3562,7 +3562,7 @@ impl ::core::clone::Clone for IMAGEHLP_LINEW64 {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct IMAGEHLP_MODULE {
     pub SizeOfStruct: u32,
     pub BaseOfImage: u32,
@@ -3575,9 +3575,9 @@ pub struct IMAGEHLP_MODULE {
     pub ImageName: [u8; 256],
     pub LoadedImageName: [u8; 256],
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for IMAGEHLP_MODULE {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for IMAGEHLP_MODULE {
     fn clone(&self) -> Self {
         *self
@@ -3637,7 +3637,7 @@ impl ::core::clone::Clone for IMAGEHLP_MODULE64_EX {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct IMAGEHLP_MODULEW {
     pub SizeOfStruct: u32,
     pub BaseOfImage: u32,
@@ -3650,9 +3650,9 @@ pub struct IMAGEHLP_MODULEW {
     pub ImageName: [u16; 256],
     pub LoadedImageName: [u16; 256],
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for IMAGEHLP_MODULEW {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for IMAGEHLP_MODULEW {
     fn clone(&self) -> Self {
         *self
@@ -3735,7 +3735,7 @@ impl ::core::clone::Clone for IMAGEHLP_STACK_FRAME {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct IMAGEHLP_SYMBOL {
     pub SizeOfStruct: u32,
     pub Address: u32,
@@ -3744,9 +3744,9 @@ pub struct IMAGEHLP_SYMBOL {
     pub MaxNameLength: u32,
     pub Name: [u8; 1],
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for IMAGEHLP_SYMBOL {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for IMAGEHLP_SYMBOL {
     fn clone(&self) -> Self {
         *self
@@ -3779,7 +3779,7 @@ impl ::core::clone::Clone for IMAGEHLP_SYMBOL64_PACKAGE {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct IMAGEHLP_SYMBOLW {
     pub SizeOfStruct: u32,
     pub Address: u32,
@@ -3788,9 +3788,9 @@ pub struct IMAGEHLP_SYMBOLW {
     pub MaxNameLength: u32,
     pub Name: [u16; 1],
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for IMAGEHLP_SYMBOLW {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for IMAGEHLP_SYMBOLW {
     fn clone(&self) -> Self {
         *self
@@ -3823,28 +3823,28 @@ impl ::core::clone::Clone for IMAGEHLP_SYMBOLW64_PACKAGE {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct IMAGEHLP_SYMBOLW_PACKAGE {
     pub sym: IMAGEHLP_SYMBOLW,
     pub name: [u16; 2001],
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for IMAGEHLP_SYMBOLW_PACKAGE {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for IMAGEHLP_SYMBOLW_PACKAGE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct IMAGEHLP_SYMBOL_PACKAGE {
     pub sym: IMAGEHLP_SYMBOL,
     pub name: [u8; 2001],
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for IMAGEHLP_SYMBOL_PACKAGE {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for IMAGEHLP_SYMBOL_PACKAGE {
     fn clone(&self) -> Self {
         *self
@@ -3973,7 +3973,7 @@ impl ::core::clone::Clone for IMAGE_DEBUG_DIRECTORY {
 }
 #[repr(C)]
 #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_System_Kernel\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
 pub struct IMAGE_DEBUG_INFORMATION {
     pub List: super::super::Kernel::LIST_ENTRY,
@@ -4008,10 +4008,10 @@ pub struct IMAGE_DEBUG_INFORMATION {
     pub ReservedOriginalFunctionTableBaseAddress: u32,
     pub Reserved: [u32; 2],
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
 impl ::core::marker::Copy for IMAGE_DEBUG_INFORMATION {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
 impl ::core::clone::Clone for IMAGE_DEBUG_INFORMATION {
     fn clone(&self) -> Self {
@@ -4419,7 +4419,7 @@ impl ::core::clone::Clone for IPMI_OS_SEL_RECORD {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct KDHELP {
     pub Thread: u32,
     pub ThCallbackStack: u32,
@@ -4434,9 +4434,9 @@ pub struct KDHELP {
     pub StackLimit: u32,
     pub Reserved: [u32; 5],
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for KDHELP {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for KDHELP {
     fn clone(&self) -> Self {
         *self
@@ -4567,13 +4567,13 @@ impl ::core::clone::Clone for KNONVOLATILE_CONTEXT_POINTERS_1_0 {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct KNONVOLATILE_CONTEXT_POINTERS {
     pub Dummy: u32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for KNONVOLATILE_CONTEXT_POINTERS {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for KNONVOLATILE_CONTEXT_POINTERS {
     fn clone(&self) -> Self {
         *self
@@ -4689,7 +4689,7 @@ impl ::core::clone::Clone for LOADED_IMAGE {
 }
 #[repr(C)]
 #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_System_Kernel\"`, `\"Win32_System_SystemInformation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel", feature = "Win32_System_SystemInformation"))]
 pub struct LOADED_IMAGE {
     pub ModuleName: ::windows_sys::core::PSTR,
@@ -4707,10 +4707,10 @@ pub struct LOADED_IMAGE {
     pub Links: super::super::Kernel::LIST_ENTRY,
     pub SizeOfImage: u32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel", feature = "Win32_System_SystemInformation"))]
 impl ::core::marker::Copy for LOADED_IMAGE {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel", feature = "Win32_System_SystemInformation"))]
 impl ::core::clone::Clone for LOADED_IMAGE {
     fn clone(&self) -> Self {
@@ -4767,16 +4767,16 @@ impl ::core::clone::Clone for MINIDUMP_CALLBACK_INFORMATION {
 }
 #[repr(C)]
 #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_Storage_FileSystem\"`, `\"Win32_System_Kernel\"`, `\"Win32_System_Memory\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel", feature = "Win32_System_Memory"))]
 pub struct MINIDUMP_CALLBACK_INFORMATION {
     pub CallbackRoutine: MINIDUMP_CALLBACK_ROUTINE,
     pub CallbackParam: *mut ::core::ffi::c_void,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel", feature = "Win32_System_Memory"))]
 impl ::core::marker::Copy for MINIDUMP_CALLBACK_INFORMATION {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel", feature = "Win32_System_Memory"))]
 impl ::core::clone::Clone for MINIDUMP_CALLBACK_INFORMATION {
     fn clone(&self) -> Self {
@@ -4985,17 +4985,17 @@ impl ::core::clone::Clone for MINIDUMP_EXCEPTION_INFORMATION {
 }
 #[repr(C)]
 #[doc = "Required features: `\"Win32_Foundation\"`, `\"Win32_System_Kernel\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
 pub struct MINIDUMP_EXCEPTION_INFORMATION {
     pub ThreadId: u32,
     pub ExceptionPointers: *mut EXCEPTION_POINTERS,
     pub ClientPointers: super::super::super::Foundation::BOOL,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
 impl ::core::marker::Copy for MINIDUMP_EXCEPTION_INFORMATION {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
 impl ::core::clone::Clone for MINIDUMP_EXCEPTION_INFORMATION {
     fn clone(&self) -> Self {
@@ -6076,15 +6076,15 @@ impl ::core::clone::Clone for MINIDUMP_USER_STREAM {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct MINIDUMP_USER_STREAM {
     pub Type: u32,
     pub BufferSize: u32,
     pub Buffer: *mut ::core::ffi::c_void,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for MINIDUMP_USER_STREAM {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for MINIDUMP_USER_STREAM {
     fn clone(&self) -> Self {
         *self
@@ -6105,14 +6105,14 @@ impl ::core::clone::Clone for MINIDUMP_USER_STREAM_INFORMATION {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct MINIDUMP_USER_STREAM_INFORMATION {
     pub UserStreamCount: u32,
     pub UserStreamArray: *mut MINIDUMP_USER_STREAM,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for MINIDUMP_USER_STREAM_INFORMATION {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for MINIDUMP_USER_STREAM_INFORMATION {
     fn clone(&self) -> Self {
         *self
@@ -6342,7 +6342,7 @@ impl ::core::clone::Clone for SRCCODEINFOW {
 }
 #[repr(C)]
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub struct STACKFRAME {
     pub AddrPC: ADDRESS,
@@ -6357,10 +6357,10 @@ pub struct STACKFRAME {
     pub KdHelp: KDHELP,
     pub AddrBStore: ADDRESS,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for STACKFRAME {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for STACKFRAME {
     fn clone(&self) -> Self {
@@ -7465,7 +7465,7 @@ impl ::core::clone::Clone for XSAVE_FORMAT {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct XSAVE_FORMAT {
     pub ControlWord: u16,
     pub StatusWord: u16,
@@ -7484,9 +7484,9 @@ pub struct XSAVE_FORMAT {
     pub XmmRegisters: [M128A; 8],
     pub Reserved4: [u8; 224],
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for XSAVE_FORMAT {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for XSAVE_FORMAT {
     fn clone(&self) -> Self {
         *self
@@ -7566,7 +7566,7 @@ impl ::core::clone::Clone for XSTATE_CONTEXT {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct XSTATE_CONTEXT {
     pub Mask: u64,
     pub Length: u32,
@@ -7576,9 +7576,9 @@ pub struct XSTATE_CONTEXT {
     pub Buffer: *mut ::core::ffi::c_void,
     pub Reserved3: u32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for XSTATE_CONTEXT {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for XSTATE_CONTEXT {
     fn clone(&self) -> Self {
         *self
@@ -7617,7 +7617,7 @@ pub type PENUMDIRTREE_CALLBACK = ::core::option::Option<unsafe extern "system" f
 #[cfg(feature = "Win32_Foundation")]
 pub type PENUMDIRTREE_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(filepath: ::windows_sys::core::PCWSTR, callerdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub type PENUMLOADED_MODULES_CALLBACK = ::core::option::Option<unsafe extern "system" fn(modulename: ::windows_sys::core::PCSTR, modulebase: u32, modulesize: u32, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
 #[doc = "Required features: `\"Win32_Foundation\"`"]
@@ -7648,14 +7648,14 @@ pub type PFIND_EXE_FILE_CALLBACK = ::core::option::Option<unsafe extern "system"
 #[cfg(feature = "Win32_Foundation")]
 pub type PFIND_EXE_FILE_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(filehandle: super::super::super::Foundation::HANDLE, filename: ::windows_sys::core::PCWSTR, callerdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub type PFUNCTION_TABLE_ACCESS_ROUTINE = ::core::option::Option<unsafe extern "system" fn(hprocess: super::super::super::Foundation::HANDLE, addrbase: u32) -> *mut ::core::ffi::c_void>;
 #[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub type PFUNCTION_TABLE_ACCESS_ROUTINE64 = ::core::option::Option<unsafe extern "system" fn(ahprocess: super::super::super::Foundation::HANDLE, addrbase: u64) -> *mut ::core::ffi::c_void>;
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub type PGET_MODULE_BASE_ROUTINE = ::core::option::Option<unsafe extern "system" fn(hprocess: super::super::super::Foundation::HANDLE, address: u32) -> u32>;
 #[doc = "Required features: `\"Win32_Foundation\"`"]
@@ -7678,7 +7678,7 @@ pub type PIMAGEHLP_STATUS_ROUTINE32 = ::core::option::Option<unsafe extern "syst
 #[cfg(feature = "Win32_Foundation")]
 pub type PIMAGEHLP_STATUS_ROUTINE64 = ::core::option::Option<unsafe extern "system" fn(reason: IMAGEHLP_STATUS_REASON, imagename: ::windows_sys::core::PCSTR, dllname: ::windows_sys::core::PCSTR, va: u64, parameter: usize) -> super::super::super::Foundation::BOOL>;
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub type PREAD_PROCESS_MEMORY_ROUTINE = ::core::option::Option<unsafe extern "system" fn(hprocess: super::super::super::Foundation::HANDLE, lpbaseaddress: u32, lpbuffer: *mut ::core::ffi::c_void, nsize: u32, lpnumberofbytesread: *mut u32) -> super::super::super::Foundation::BOOL>;
 #[doc = "Required features: `\"Win32_Foundation\"`"]
@@ -7789,7 +7789,7 @@ pub type PSYMBOL_FUNCENTRY_CALLBACK = ::core::option::Option<unsafe extern "syst
 #[cfg(feature = "Win32_Foundation")]
 pub type PSYMBOL_FUNCENTRY_CALLBACK64 = ::core::option::Option<unsafe extern "system" fn(hprocess: super::super::super::Foundation::HANDLE, addrbase: u64, usercontext: u64) -> *mut ::core::ffi::c_void>;
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub type PSYMBOL_REGISTERED_CALLBACK = ::core::option::Option<unsafe extern "system" fn(hprocess: super::super::super::Foundation::HANDLE, actioncode: u32, callbackdata: *const ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
 #[doc = "Required features: `\"Win32_Foundation\"`"]
@@ -7808,7 +7808,7 @@ pub type PSYM_ENUMLINES_CALLBACK = ::core::option::Option<unsafe extern "system"
 #[cfg(feature = "Win32_Foundation")]
 pub type PSYM_ENUMLINES_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(lineinfo: *const SRCCODEINFOW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub type PSYM_ENUMMODULES_CALLBACK = ::core::option::Option<unsafe extern "system" fn(modulename: ::windows_sys::core::PCSTR, baseofdll: u32, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
 #[doc = "Required features: `\"Win32_Foundation\"`"]
@@ -7827,7 +7827,7 @@ pub type PSYM_ENUMSOURCEFILES_CALLBACK = ::core::option::Option<unsafe extern "s
 #[cfg(feature = "Win32_Foundation")]
 pub type PSYM_ENUMSOURCEFILES_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(psourcefile: *const SOURCEFILEW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub type PSYM_ENUMSYMBOLS_CALLBACK = ::core::option::Option<unsafe extern "system" fn(symbolname: ::windows_sys::core::PCSTR, symboladdress: u32, symbolsize: u32, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
 #[doc = "Required features: `\"Win32_Foundation\"`"]
@@ -7837,11 +7837,11 @@ pub type PSYM_ENUMSYMBOLS_CALLBACK64 = ::core::option::Option<unsafe extern "sys
 #[cfg(feature = "Win32_Foundation")]
 pub type PSYM_ENUMSYMBOLS_CALLBACK64W = ::core::option::Option<unsafe extern "system" fn(symbolname: ::windows_sys::core::PCWSTR, symboladdress: u64, symbolsize: u32, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub type PSYM_ENUMSYMBOLS_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(symbolname: ::windows_sys::core::PCWSTR, symboladdress: u32, symbolsize: u32, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub type PTRANSLATE_ADDRESS_ROUTINE = ::core::option::Option<unsafe extern "system" fn(hprocess: super::super::super::Foundation::HANDLE, hthread: super::super::super::Foundation::HANDLE, lpaddr: *mut ADDRESS) -> u32>;
 #[doc = "Required features: `\"Win32_Foundation\"`"]

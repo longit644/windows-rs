@@ -215,7 +215,7 @@ impl ::core::clone::Clone for NCB {
 }
 #[repr(C)]
 #[doc = "Required features: `\"Win32_Foundation\"`"]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 pub struct NCB {
     pub ncb_command: u8,
@@ -234,10 +234,10 @@ pub struct NCB {
     pub ncb_reserve: [u8; 10],
     pub ncb_event: super::super::Foundation::HANDLE,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NCB {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NCB {
     fn clone(&self) -> Self {

@@ -1379,7 +1379,7 @@ impl ::core::clone::Clone for DELAYLOAD_INFO {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct DELAYLOAD_INFO {
     pub Size: u32,
     pub DelayloadDescriptor: *mut IMAGE_DELAYLOAD_DESCRIPTOR,
@@ -1390,9 +1390,9 @@ pub struct DELAYLOAD_INFO {
     pub Unused: *mut ::core::ffi::c_void,
     pub LastError: u32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for DELAYLOAD_INFO {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for DELAYLOAD_INFO {
     fn clone(&self) -> Self {
         *self

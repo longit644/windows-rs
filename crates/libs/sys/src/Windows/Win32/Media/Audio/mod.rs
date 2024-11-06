@@ -1401,7 +1401,7 @@ impl ::core::clone::Clone for ACMSTREAMHEADER {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct ACMSTREAMHEADER {
     pub cbStruct: u32,
     pub fdwStatus: u32,
@@ -1416,9 +1416,9 @@ pub struct ACMSTREAMHEADER {
     pub dwDstUser: usize,
     pub dwReservedDriver: [u32; 10],
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for ACMSTREAMHEADER {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for ACMSTREAMHEADER {
     fn clone(&self) -> Self {
         *self

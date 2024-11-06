@@ -5417,13 +5417,13 @@ impl ::core::clone::Clone for SPLCLIENT_INFO_2_WINXP {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct SPLCLIENT_INFO_2_WINXP {
     pub hSplPrinter: u32,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for SPLCLIENT_INFO_2_WINXP {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for SPLCLIENT_INFO_2_WINXP {
     fn clone(&self) -> Self {
         *self

@@ -475,7 +475,7 @@ impl ::core::clone::Clone for PACKAGE_ID {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct PACKAGE_ID {
     pub reserved: u32,
     pub processorArchitecture: u32,
@@ -485,9 +485,9 @@ pub struct PACKAGE_ID {
     pub resourceId: ::windows_sys::core::PWSTR,
     pub publisherId: ::windows_sys::core::PWSTR,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for PACKAGE_ID {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for PACKAGE_ID {
     fn clone(&self) -> Self {
         *self
@@ -512,7 +512,7 @@ impl ::core::clone::Clone for PACKAGE_INFO {
     }
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 pub struct PACKAGE_INFO {
     pub reserved: u32,
     pub flags: u32,
@@ -521,9 +521,9 @@ pub struct PACKAGE_INFO {
     pub packageFamilyName: ::windows_sys::core::PWSTR,
     pub packageId: PACKAGE_ID,
 }
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::marker::Copy for PACKAGE_INFO {}
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 impl ::core::clone::Clone for PACKAGE_INFO {
     fn clone(&self) -> Self {
         *self
