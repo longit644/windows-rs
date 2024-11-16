@@ -6,7 +6,7 @@ fn test() {
 }
 
 #[test]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 fn test() {
     use windows_sys::Win32::System::Diagnostics::Debug::KNONVOLATILE_CONTEXT_POINTERS;
     assert_eq!(4, core::mem::size_of::<KNONVOLATILE_CONTEXT_POINTERS>());

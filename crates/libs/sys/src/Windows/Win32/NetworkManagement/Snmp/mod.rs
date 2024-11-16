@@ -284,7 +284,7 @@ pub struct AsnObjectIdentifier {
     pub ids: *mut u32,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct AsnObjectIdentifier {
     pub idLength: u32,
@@ -299,7 +299,7 @@ pub struct AsnOctetString {
     pub dynamic: super::super::Foundation::BOOL,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct AsnOctetString {
     pub stream: *mut u8,
@@ -320,7 +320,7 @@ pub struct SnmpVarBindList {
     pub len: u32,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SnmpVarBindList {
     pub list: *mut SnmpVarBind,

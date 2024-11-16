@@ -3045,7 +3045,7 @@ pub struct KSNODEPROPERTY_AUDIO_3D_LISTENER {
     pub ListenerId: *mut core::ffi::c_void,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct KSNODEPROPERTY_AUDIO_3D_LISTENER {
     pub NodeProperty: KSNODEPROPERTY,
@@ -3076,7 +3076,7 @@ pub struct KSNODEPROPERTY_AUDIO_PROPERTY {
     pub Length: u32,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct KSNODEPROPERTY_AUDIO_PROPERTY {
     pub NodeProperty: KSNODEPROPERTY,
@@ -4212,7 +4212,7 @@ pub struct KSSTREAM_HEADER {
     pub Reserved: u32,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct KSSTREAM_HEADER {
     pub Size: u32,

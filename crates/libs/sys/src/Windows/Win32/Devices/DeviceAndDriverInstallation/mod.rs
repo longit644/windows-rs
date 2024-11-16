@@ -2402,7 +2402,7 @@ pub struct CABINET_INFO_A {
     pub CabinetNumber: u16,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct CABINET_INFO_A {
     pub CabinetPath: windows_sys::core::PCSTR,
@@ -2422,7 +2422,7 @@ pub struct CABINET_INFO_W {
     pub CabinetNumber: u16,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct CABINET_INFO_W {
     pub CabinetPath: windows_sys::core::PCWSTR,
@@ -2504,7 +2504,7 @@ pub struct COINSTALLER_CONTEXT_DATA {
     pub PrivateData: *mut core::ffi::c_void,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct COINSTALLER_CONTEXT_DATA {
     pub PostProcessing: super::super::Foundation::BOOL,
@@ -2616,7 +2616,7 @@ pub struct FILEPATHS_A {
     pub Flags: u32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct FILEPATHS_A {
     pub Target: windows_sys::core::PCSTR,
@@ -2637,7 +2637,7 @@ pub struct FILEPATHS_SIGNERINFO_A {
     pub CatalogFile: windows_sys::core::PCSTR,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct FILEPATHS_SIGNERINFO_A {
     pub Target: windows_sys::core::PCSTR,
@@ -2661,7 +2661,7 @@ pub struct FILEPATHS_SIGNERINFO_W {
     pub CatalogFile: windows_sys::core::PCWSTR,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct FILEPATHS_SIGNERINFO_W {
     pub Target: windows_sys::core::PCWSTR,
@@ -2682,7 +2682,7 @@ pub struct FILEPATHS_W {
     pub Flags: u32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct FILEPATHS_W {
     pub Target: windows_sys::core::PCWSTR,
@@ -2703,7 +2703,7 @@ pub struct FILE_IN_CABINET_INFO_A {
     pub FullTargetName: [i8; 260],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct FILE_IN_CABINET_INFO_A {
     pub NameInCabinet: windows_sys::core::PCSTR,
@@ -2727,7 +2727,7 @@ pub struct FILE_IN_CABINET_INFO_W {
     pub FullTargetName: [u16; 260],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct FILE_IN_CABINET_INFO_W {
     pub NameInCabinet: windows_sys::core::PCWSTR,
@@ -2764,7 +2764,7 @@ pub struct INFCONTEXT {
     pub Line: u32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct INFCONTEXT {
     pub Inf: *mut core::ffi::c_void,
@@ -2933,7 +2933,7 @@ pub struct SOURCE_MEDIA_A {
     pub Flags: u32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SOURCE_MEDIA_A {
     pub Reserved: windows_sys::core::PCSTR,
@@ -2955,7 +2955,7 @@ pub struct SOURCE_MEDIA_W {
     pub Flags: u32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SOURCE_MEDIA_W {
     pub Reserved: windows_sys::core::PCWSTR,
@@ -2978,7 +2978,7 @@ pub struct SP_ALTPLATFORM_INFO_V1 {
     pub Reserved: u16,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
 #[derive(Clone, Copy)]
 pub struct SP_ALTPLATFORM_INFO_V1 {
@@ -3012,7 +3012,7 @@ pub union SP_ALTPLATFORM_INFO_V2_0 {
     pub Flags: u16,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_SystemInformation"))]
 #[derive(Clone, Copy)]
 pub struct SP_ALTPLATFORM_INFO_V2 {
@@ -3026,7 +3026,7 @@ pub struct SP_ALTPLATFORM_INFO_V2 {
     pub FirstValidatedMinorVersion: u32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_SystemInformation"))]
 #[derive(Clone, Copy)]
 pub union SP_ALTPLATFORM_INFO_V2_0 {
@@ -3057,7 +3057,7 @@ pub union SP_ALTPLATFORM_INFO_V3_0 {
     pub Flags: u16,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_ALTPLATFORM_INFO_V3 {
     pub cbSize: u32,
@@ -3073,7 +3073,7 @@ pub struct SP_ALTPLATFORM_INFO_V3 {
     pub BuildNumber: u32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub union SP_ALTPLATFORM_INFO_V3_0 {
     pub Reserved: u16,
@@ -3088,7 +3088,7 @@ pub struct SP_BACKUP_QUEUE_PARAMS_V1_A {
     pub FilenameOffset: i32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_BACKUP_QUEUE_PARAMS_V1_A {
     pub cbSize: u32,
@@ -3104,7 +3104,7 @@ pub struct SP_BACKUP_QUEUE_PARAMS_V1_W {
     pub FilenameOffset: i32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_BACKUP_QUEUE_PARAMS_V1_W {
     pub cbSize: u32,
@@ -3121,7 +3121,7 @@ pub struct SP_BACKUP_QUEUE_PARAMS_V2_A {
     pub ReinstallInstance: [i8; 260],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_BACKUP_QUEUE_PARAMS_V2_A {
     pub cbSize: u32,
@@ -3139,7 +3139,7 @@ pub struct SP_BACKUP_QUEUE_PARAMS_V2_W {
     pub ReinstallInstance: [u16; 260],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_BACKUP_QUEUE_PARAMS_V2_W {
     pub cbSize: u32,
@@ -3157,7 +3157,7 @@ pub struct SP_CLASSIMAGELIST_DATA {
     pub Reserved: usize,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_UI_Controls")]
 #[derive(Clone, Copy)]
 pub struct SP_CLASSIMAGELIST_DATA {
@@ -3173,7 +3173,7 @@ pub struct SP_CLASSINSTALL_HEADER {
     pub InstallFunction: DI_FUNCTION,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_CLASSINSTALL_HEADER {
     pub cbSize: u32,
@@ -3188,7 +3188,7 @@ pub struct SP_DETECTDEVICE_PARAMS {
     pub ProgressNotifyParam: *mut core::ffi::c_void,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_DETECTDEVICE_PARAMS {
     pub ClassInstallHeader: SP_CLASSINSTALL_HEADER,
@@ -3205,7 +3205,7 @@ pub struct SP_DEVICE_INTERFACE_DATA {
     pub Reserved: usize,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_DEVICE_INTERFACE_DATA {
     pub cbSize: u32,
@@ -3221,7 +3221,7 @@ pub struct SP_DEVICE_INTERFACE_DETAIL_DATA_A {
     pub DevicePath: [i8; 1],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_DEVICE_INTERFACE_DETAIL_DATA_A {
     pub cbSize: u32,
@@ -3235,7 +3235,7 @@ pub struct SP_DEVICE_INTERFACE_DETAIL_DATA_W {
     pub DevicePath: [u16; 1],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_DEVICE_INTERFACE_DETAIL_DATA_W {
     pub cbSize: u32,
@@ -3251,7 +3251,7 @@ pub struct SP_DEVINFO_DATA {
     pub Reserved: usize,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_DEVINFO_DATA {
     pub cbSize: u32,
@@ -3269,7 +3269,7 @@ pub struct SP_DEVINFO_LIST_DETAIL_DATA_A {
     pub RemoteMachineName: [i8; 263],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_DEVINFO_LIST_DETAIL_DATA_A {
     pub cbSize: u32,
@@ -3287,7 +3287,7 @@ pub struct SP_DEVINFO_LIST_DETAIL_DATA_W {
     pub RemoteMachineName: [u16; 263],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_DEVINFO_LIST_DETAIL_DATA_W {
     pub cbSize: u32,
@@ -3311,7 +3311,7 @@ pub struct SP_DEVINSTALL_PARAMS_A {
     pub DriverPath: [i8; 260],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_DEVINSTALL_PARAMS_A {
     pub cbSize: u32,
@@ -3341,7 +3341,7 @@ pub struct SP_DEVINSTALL_PARAMS_W {
     pub DriverPath: [u16; 260],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_DEVINSTALL_PARAMS_W {
     pub cbSize: u32,
@@ -3367,7 +3367,7 @@ pub struct SP_DRVINFO_DATA_V1_A {
     pub ProviderName: [i8; 256],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_DRVINFO_DATA_V1_A {
     pub cbSize: u32,
@@ -3389,7 +3389,7 @@ pub struct SP_DRVINFO_DATA_V1_W {
     pub ProviderName: [u16; 256],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_DRVINFO_DATA_V1_W {
     pub cbSize: u32,
@@ -3413,7 +3413,7 @@ pub struct SP_DRVINFO_DATA_V2_A {
     pub DriverVersion: u64,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_DRVINFO_DATA_V2_A {
     pub cbSize: u32,
@@ -3439,7 +3439,7 @@ pub struct SP_DRVINFO_DATA_V2_W {
     pub DriverVersion: u64,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_DRVINFO_DATA_V2_W {
     pub cbSize: u32,
@@ -3466,7 +3466,7 @@ pub struct SP_DRVINFO_DETAIL_DATA_A {
     pub HardwareID: [i8; 1],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_DRVINFO_DETAIL_DATA_A {
     pub cbSize: u32,
@@ -3494,7 +3494,7 @@ pub struct SP_DRVINFO_DETAIL_DATA_W {
     pub HardwareID: [u16; 1],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_DRVINFO_DETAIL_DATA_W {
     pub cbSize: u32,
@@ -3518,7 +3518,7 @@ pub struct SP_DRVINSTALL_PARAMS {
     pub Reserved: u32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_DRVINSTALL_PARAMS {
     pub cbSize: u32,
@@ -3536,7 +3536,7 @@ pub struct SP_ENABLECLASS_PARAMS {
     pub EnableMessage: u32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_ENABLECLASS_PARAMS {
     pub ClassInstallHeader: SP_CLASSINSTALL_HEADER,
@@ -3561,7 +3561,7 @@ pub struct SP_FILE_COPY_PARAMS_A {
     pub SecurityDescriptor: windows_sys::core::PCSTR,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_FILE_COPY_PARAMS_A {
     pub cbSize: u32,
@@ -3595,7 +3595,7 @@ pub struct SP_FILE_COPY_PARAMS_W {
     pub SecurityDescriptor: windows_sys::core::PCWSTR,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_FILE_COPY_PARAMS_W {
     pub cbSize: u32,
@@ -3620,7 +3620,7 @@ pub struct SP_INF_INFORMATION {
     pub VersionData: [u8; 1],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_INF_INFORMATION {
     pub InfStyle: INF_STYLE,
@@ -3637,7 +3637,7 @@ pub struct SP_INF_SIGNER_INFO_V1_A {
     pub DigitalSignerVersion: [i8; 260],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_INF_SIGNER_INFO_V1_A {
     pub cbSize: u32,
@@ -3655,7 +3655,7 @@ pub struct SP_INF_SIGNER_INFO_V1_W {
     pub DigitalSignerVersion: [u16; 260],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_INF_SIGNER_INFO_V1_W {
     pub cbSize: u32,
@@ -3674,7 +3674,7 @@ pub struct SP_INF_SIGNER_INFO_V2_A {
     pub SignerScore: u32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_INF_SIGNER_INFO_V2_A {
     pub cbSize: u32,
@@ -3694,7 +3694,7 @@ pub struct SP_INF_SIGNER_INFO_V2_W {
     pub SignerScore: u32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_INF_SIGNER_INFO_V2_W {
     pub cbSize: u32,
@@ -3718,7 +3718,7 @@ pub struct SP_INSTALLWIZARD_DATA {
     pub hwndWizardDlg: super::super::Foundation::HWND,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_UI_Controls")]
 #[derive(Clone, Copy)]
 pub struct SP_INSTALLWIZARD_DATA {
@@ -3743,7 +3743,7 @@ pub struct SP_NEWDEVICEWIZARD_DATA {
     pub hwndWizardDlg: super::super::Foundation::HWND,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_UI_Controls")]
 #[derive(Clone, Copy)]
 pub struct SP_NEWDEVICEWIZARD_DATA {
@@ -3762,7 +3762,7 @@ pub struct SP_ORIGINAL_FILE_INFO_A {
     pub OriginalCatalogName: [i8; 260],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_ORIGINAL_FILE_INFO_A {
     pub cbSize: u32,
@@ -3778,7 +3778,7 @@ pub struct SP_ORIGINAL_FILE_INFO_W {
     pub OriginalCatalogName: [u16; 260],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_ORIGINAL_FILE_INFO_W {
     pub cbSize: u32,
@@ -3799,7 +3799,7 @@ pub struct SP_POWERMESSAGEWAKE_PARAMS_W {
     pub PowerMessageWake: [u16; 512],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_POWERMESSAGEWAKE_PARAMS_W {
     pub ClassInstallHeader: SP_CLASSINSTALL_HEADER,
@@ -3815,7 +3815,7 @@ pub struct SP_PROPCHANGE_PARAMS {
     pub HwProfile: u32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_PROPCHANGE_PARAMS {
     pub ClassInstallHeader: SP_CLASSINSTALL_HEADER,
@@ -3833,7 +3833,7 @@ pub struct SP_PROPSHEETPAGE_REQUEST {
     pub DeviceInfoData: *mut SP_DEVINFO_DATA,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_PROPSHEETPAGE_REQUEST {
     pub cbSize: u32,
@@ -3851,7 +3851,7 @@ pub struct SP_REGISTER_CONTROL_STATUSA {
     pub FailureCode: u32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_REGISTER_CONTROL_STATUSA {
     pub cbSize: u32,
@@ -3869,7 +3869,7 @@ pub struct SP_REGISTER_CONTROL_STATUSW {
     pub FailureCode: u32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_REGISTER_CONTROL_STATUSW {
     pub cbSize: u32,
@@ -3886,7 +3886,7 @@ pub struct SP_REMOVEDEVICE_PARAMS {
     pub HwProfile: u32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_REMOVEDEVICE_PARAMS {
     pub ClassInstallHeader: SP_CLASSINSTALL_HEADER,
@@ -3914,7 +3914,7 @@ pub struct SP_SELECTDEVICE_PARAMS_W {
     pub SubTitle: [u16; 256],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_SELECTDEVICE_PARAMS_W {
     pub ClassInstallHeader: SP_CLASSINSTALL_HEADER,
@@ -3939,7 +3939,7 @@ pub struct SP_TROUBLESHOOTER_PARAMS_W {
     pub HtmlTroubleShooter: [u16; 260],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_TROUBLESHOOTER_PARAMS_W {
     pub ClassInstallHeader: SP_CLASSINSTALL_HEADER,
@@ -3955,7 +3955,7 @@ pub struct SP_UNREMOVEDEVICE_PARAMS {
     pub HwProfile: u32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SP_UNREMOVEDEVICE_PARAMS {
     pub ClassInstallHeader: SP_CLASSINSTALL_HEADER,

@@ -66,7 +66,7 @@ fn test_arch() {
 }
 
 #[test]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 fn test_arch() {
     assert_eq!(core::mem::size_of::<OVERLAPPED>(), 20);
 }

@@ -298,7 +298,7 @@ pub struct MEMORY_BASIC_INFORMATION {
     pub Type: PAGE_TYPE,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct MEMORY_BASIC_INFORMATION {
     pub BaseAddress: *mut core::ffi::c_void,

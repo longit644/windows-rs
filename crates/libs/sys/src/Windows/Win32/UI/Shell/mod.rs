@@ -4883,7 +4883,7 @@ pub struct APPBARDATA {
     pub lParam: super::super::Foundation::LPARAM,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct APPBARDATA {
     pub cbSize: u32,
@@ -4940,7 +4940,7 @@ pub struct ASSOCIATIONELEMENT {
     pub pszClass: windows_sys::core::PCWSTR,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_System_Registry")]
 #[derive(Clone, Copy)]
 pub struct ASSOCIATIONELEMENT {
@@ -5313,7 +5313,7 @@ pub struct DRAGINFOA {
     pub grfKeyState: u32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct DRAGINFOA {
     pub uSize: u32,
@@ -5333,7 +5333,7 @@ pub struct DRAGINFOW {
     pub grfKeyState: u32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct DRAGINFOW {
     pub uSize: u32,
@@ -5649,7 +5649,7 @@ pub union NOTIFYICONDATAA_0 {
     pub uVersion: u32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[derive(Clone, Copy)]
 pub struct NOTIFYICONDATAA {
@@ -5670,7 +5670,7 @@ pub struct NOTIFYICONDATAA {
     pub hBalloonIcon: super::WindowsAndMessaging::HICON,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[derive(Clone, Copy)]
 pub union NOTIFYICONDATAA_0 {
@@ -5707,7 +5707,7 @@ pub union NOTIFYICONDATAW_0 {
     pub uVersion: u32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[derive(Clone, Copy)]
 pub struct NOTIFYICONDATAW {
@@ -5728,7 +5728,7 @@ pub struct NOTIFYICONDATAW {
     pub hBalloonIcon: super::WindowsAndMessaging::HICON,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[derive(Clone, Copy)]
 pub union NOTIFYICONDATAW_0 {
@@ -5745,7 +5745,7 @@ pub struct NOTIFYICONIDENTIFIER {
     pub guidItem: windows_sys::core::GUID,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct NOTIFYICONIDENTIFIER {
     pub cbSize: u32,
@@ -5829,7 +5829,7 @@ pub struct OPEN_PRINTER_PROPS_INFOA {
     pub bModal: super::super::Foundation::BOOL,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct OPEN_PRINTER_PROPS_INFOA {
     pub dwSize: u32,
@@ -5849,7 +5849,7 @@ pub struct OPEN_PRINTER_PROPS_INFOW {
     pub bModal: super::super::Foundation::BOOL,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct OPEN_PRINTER_PROPS_INFOW {
     pub dwSize: u32,
@@ -6068,7 +6068,7 @@ pub struct SHCREATEPROCESSINFOW {
     pub lpProcessInformation: *mut super::super::System::Threading::PROCESS_INFORMATION,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(all(feature = "Win32_Security", feature = "Win32_System_Threading"))]
 #[derive(Clone, Copy)]
 pub struct SHCREATEPROCESSINFOW {
@@ -6164,7 +6164,7 @@ pub union SHELLEXECUTEINFOA_0 {
     pub hMonitor: super::super::Foundation::HANDLE,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_System_Registry")]
 #[derive(Clone, Copy)]
 pub struct SHELLEXECUTEINFOA {
@@ -6185,7 +6185,7 @@ pub struct SHELLEXECUTEINFOA {
     pub hProcess: super::super::Foundation::HANDLE,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_System_Registry")]
 #[derive(Clone, Copy)]
 pub union SHELLEXECUTEINFOA_0 {
@@ -6222,7 +6222,7 @@ pub union SHELLEXECUTEINFOW_0 {
     pub hMonitor: super::super::Foundation::HANDLE,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_System_Registry")]
 #[derive(Clone, Copy)]
 pub struct SHELLEXECUTEINFOW {
@@ -6243,7 +6243,7 @@ pub struct SHELLEXECUTEINFOW {
     pub hProcess: super::super::Foundation::HANDLE,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_System_Registry")]
 #[derive(Clone, Copy)]
 pub union SHELLEXECUTEINFOW_0 {
@@ -6297,7 +6297,7 @@ pub struct SHFILEINFOA {
     pub szTypeName: [i8; 80],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[derive(Clone, Copy)]
 pub struct SHFILEINFOA {
@@ -6319,7 +6319,7 @@ pub struct SHFILEINFOW {
     pub szTypeName: [u16; 80],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[derive(Clone, Copy)]
 pub struct SHFILEINFOW {
@@ -6343,7 +6343,7 @@ pub struct SHFILEOPSTRUCTA {
     pub lpszProgressTitle: windows_sys::core::PCSTR,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SHFILEOPSTRUCTA {
     pub hwnd: super::super::Foundation::HWND,
@@ -6369,7 +6369,7 @@ pub struct SHFILEOPSTRUCTW {
     pub lpszProgressTitle: windows_sys::core::PCWSTR,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SHFILEOPSTRUCTW {
     pub hwnd: super::super::Foundation::HWND,
@@ -6410,7 +6410,7 @@ pub struct SHNAMEMAPPINGA {
     pub cchNewPath: i32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SHNAMEMAPPINGA {
     pub pszOldPath: windows_sys::core::PSTR,
@@ -6428,7 +6428,7 @@ pub struct SHNAMEMAPPINGW {
     pub cchNewPath: i32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SHNAMEMAPPINGW {
     pub pszOldPath: windows_sys::core::PWSTR,
@@ -6445,7 +6445,7 @@ pub struct SHQUERYRBINFO {
     pub i64NumItems: i64,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SHQUERYRBINFO {
     pub cbSize: u32,
@@ -6464,7 +6464,7 @@ pub struct SHSTOCKICONINFO {
     pub szPath: [u16; 260],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[derive(Clone, Copy)]
 pub struct SHSTOCKICONINFO {

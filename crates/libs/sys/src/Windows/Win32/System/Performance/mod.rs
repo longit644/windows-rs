@@ -884,7 +884,7 @@ pub struct PERF_COUNTER_DEFINITION {
     pub CounterOffset: u32,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct PERF_COUNTER_DEFINITION {
     pub ByteLength: u32,
@@ -1030,7 +1030,7 @@ pub struct PERF_OBJECT_TYPE {
     pub PerfFreq: i64,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct PERF_OBJECT_TYPE {
     pub TotalByteLength: u32,

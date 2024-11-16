@@ -1926,7 +1926,7 @@ pub struct RASCONNA {
     pub guidCorrelationId: windows_sys::core::GUID,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct RASCONNA {
     pub dwSize: u32,
@@ -1986,7 +1986,7 @@ pub struct RASCONNW {
     pub guidCorrelationId: windows_sys::core::GUID,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct RASCONNW {
     pub dwSize: u32,
@@ -2056,7 +2056,7 @@ pub struct RASDEVSPECIFICINFO {
     pub pbDevSpecificInfo: *mut u8,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct RASDEVSPECIFICINFO {
     pub dwSize: u32,
@@ -2104,7 +2104,7 @@ pub struct RASDIALPARAMSA {
     pub szEncPassword: windows_sys::core::PSTR,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct RASDIALPARAMSA {
     pub dwSize: u32,
@@ -2136,7 +2136,7 @@ pub struct RASDIALPARAMSW {
     pub szEncPassword: windows_sys::core::PWSTR,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct RASDIALPARAMSW {
     pub dwSize: u32,
@@ -2252,7 +2252,7 @@ pub struct RASENTRYDLGA {
     pub reserved2: usize,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct RASENTRYDLGA {
     pub dwSize: u32,
@@ -2280,7 +2280,7 @@ pub struct RASENTRYDLGW {
     pub reserved2: usize,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct RASENTRYDLGW {
     pub dwSize: u32,
@@ -2397,7 +2397,7 @@ pub struct RASIKEV2_PROJECTION_INFO {
     pub ipv6ServerAddresses: *mut super::super::Networking::WinSock::IN6_ADDR,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Networking_WinSock")]
 #[derive(Clone, Copy)]
 pub struct RASIKEV2_PROJECTION_INFO {
@@ -2468,7 +2468,7 @@ pub struct RASPBDLGA {
     pub reserved2: usize,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct RASPBDLGA {
     pub dwSize: u32,
@@ -2498,7 +2498,7 @@ pub struct RASPBDLGW {
     pub reserved2: usize,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct RASPBDLGW {
     pub dwSize: u32,

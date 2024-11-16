@@ -1155,7 +1155,7 @@ pub struct ACMSTREAMHEADER {
     pub dwReservedDriver: [u32; 15],
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct ACMSTREAMHEADER {
     pub cbStruct: u32,

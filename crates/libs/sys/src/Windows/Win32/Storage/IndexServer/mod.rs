@@ -229,7 +229,7 @@ pub union DBID_1 {
     pub ulPropid: u32,
 }
 #[repr(C, packed(2))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct DBID {
     pub uGuid: DBID_0,
@@ -237,14 +237,14 @@ pub struct DBID {
     pub uName: DBID_1,
 }
 #[repr(C, packed(2))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub union DBID_0 {
     pub guid: windows_sys::core::GUID,
     pub pguid: *mut windows_sys::core::GUID,
 }
 #[repr(C, packed(2))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub union DBID_1 {
     pub pwszName: windows_sys::core::PWSTR,

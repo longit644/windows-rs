@@ -839,7 +839,7 @@ pub struct WINHTTP_CONNECTION_INFO {
     pub RemoteAddress: super::WinSock::SOCKADDR_STORAGE,
 }
 #[repr(C, packed(4))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Networking_WinSock")]
 #[derive(Clone, Copy)]
 pub struct WINHTTP_CONNECTION_INFO {
@@ -927,7 +927,7 @@ pub struct WINHTTP_MATCH_CONNECTION_GUID {
     pub ullFlags: u64,
 }
 #[repr(C, packed(4))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct WINHTTP_MATCH_CONNECTION_GUID {
     pub ConnectionGuid: windows_sys::core::GUID,
@@ -1003,7 +1003,7 @@ pub struct WINHTTP_PROXY_SETTINGS_EX {
     pub pcwszConnectionName: windows_sys::core::PCWSTR,
 }
 #[repr(C, packed(4))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct WINHTTP_PROXY_SETTINGS_EX {
     pub ullGenerationId: u64,
@@ -1025,7 +1025,7 @@ pub struct WINHTTP_PROXY_SETTINGS_PARAM {
     pub pcwszProbeHost: windows_sys::core::PCWSTR,
 }
 #[repr(C, packed(4))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct WINHTTP_PROXY_SETTINGS_PARAM {
     pub ullFlags: u64,
@@ -1048,7 +1048,7 @@ pub struct WINHTTP_REQUEST_STATS {
     pub rgullStats: [u64; 32],
 }
 #[repr(C, packed(4))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct WINHTTP_REQUEST_STATS {
     pub ullFlags: u64,
@@ -1064,7 +1064,7 @@ pub struct WINHTTP_REQUEST_TIMES {
     pub rgullTimes: [u64; 64],
 }
 #[repr(C, packed(4))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct WINHTTP_REQUEST_TIMES {
     pub cTimes: u32,
@@ -1082,7 +1082,7 @@ pub struct WINHTTP_RESOLVER_CACHE_CONFIG {
     pub ullFlags: u64,
 }
 #[repr(C, packed(4))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct WINHTTP_RESOLVER_CACHE_CONFIG {
     pub ulMaxResolverCacheEntries: u32,

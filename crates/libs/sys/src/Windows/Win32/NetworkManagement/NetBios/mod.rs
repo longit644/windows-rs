@@ -172,7 +172,7 @@ pub struct NCB {
     pub ncb_event: super::super::Foundation::HANDLE,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct NCB {
     pub ncb_command: u8,

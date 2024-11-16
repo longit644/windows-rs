@@ -329,7 +329,7 @@ pub struct CHOOSECOLORA {
     pub lpTemplateName: windows_sys::core::PCSTR,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct CHOOSECOLORA {
     pub lStructSize: u32,
@@ -357,7 +357,7 @@ pub struct CHOOSECOLORW {
     pub lpTemplateName: windows_sys::core::PCWSTR,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct CHOOSECOLORW {
     pub lStructSize: u32,
@@ -393,7 +393,7 @@ pub struct CHOOSEFONTA {
     pub nSizeMax: i32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[derive(Clone, Copy)]
 pub struct CHOOSEFONTA {
@@ -437,7 +437,7 @@ pub struct CHOOSEFONTW {
     pub nSizeMax: i32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[derive(Clone, Copy)]
 pub struct CHOOSEFONTW {
@@ -468,7 +468,7 @@ pub struct DEVNAMES {
     pub wDefault: u16,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct DEVNAMES {
     pub wDriverOffset: u16,
@@ -493,7 +493,7 @@ pub struct FINDREPLACEA {
     pub lpTemplateName: windows_sys::core::PCSTR,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct FINDREPLACEA {
     pub lStructSize: u32,
@@ -525,7 +525,7 @@ pub struct FINDREPLACEW {
     pub lpTemplateName: windows_sys::core::PCWSTR,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct FINDREPLACEW {
     pub lStructSize: u32,
@@ -549,7 +549,7 @@ pub struct OFNOTIFYA {
     pub pszFile: windows_sys::core::PSTR,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct OFNOTIFYA {
     pub hdr: super::NMHDR,
@@ -566,7 +566,7 @@ pub struct OFNOTIFYEXA {
     pub pidl: *mut core::ffi::c_void,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct OFNOTIFYEXA {
     pub hdr: super::NMHDR,
@@ -584,7 +584,7 @@ pub struct OFNOTIFYEXW {
     pub pidl: *mut core::ffi::c_void,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct OFNOTIFYEXW {
     pub hdr: super::NMHDR,
@@ -601,7 +601,7 @@ pub struct OFNOTIFYW {
     pub pszFile: windows_sys::core::PWSTR,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct OFNOTIFYW {
     pub hdr: super::NMHDR,
@@ -637,7 +637,7 @@ pub struct OPENFILENAMEA {
     pub FlagsEx: OPEN_FILENAME_FLAGS_EX,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct OPENFILENAMEA {
     pub lStructSize: u32,
@@ -693,7 +693,7 @@ pub struct OPENFILENAMEW {
     pub FlagsEx: OPEN_FILENAME_FLAGS_EX,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct OPENFILENAMEW {
     pub lStructSize: u32,
@@ -746,7 +746,7 @@ pub struct OPENFILENAME_NT4A {
     pub lpTemplateName: windows_sys::core::PCSTR,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct OPENFILENAME_NT4A {
     pub lStructSize: u32,
@@ -796,7 +796,7 @@ pub struct OPENFILENAME_NT4W {
     pub lpTemplateName: windows_sys::core::PCWSTR,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct OPENFILENAME_NT4W {
     pub lStructSize: u32,
@@ -840,7 +840,7 @@ pub struct PAGESETUPDLGA {
     pub hPageSetupTemplate: super::super::super::Foundation::HGLOBAL,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct PAGESETUPDLGA {
     pub lStructSize: u32,
@@ -878,7 +878,7 @@ pub struct PAGESETUPDLGW {
     pub hPageSetupTemplate: super::super::super::Foundation::HGLOBAL,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct PAGESETUPDLGW {
     pub lStructSize: u32,
@@ -922,7 +922,7 @@ pub struct PRINTDLGA {
     pub hSetupTemplate: super::super::super::Foundation::HGLOBAL,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[derive(Clone, Copy)]
 pub struct PRINTDLGA {
@@ -974,7 +974,7 @@ pub struct PRINTDLGEXA {
     pub dwResultAction: u32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[derive(Clone, Copy)]
 pub struct PRINTDLGEXA {
@@ -1028,7 +1028,7 @@ pub struct PRINTDLGEXW {
     pub dwResultAction: u32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[derive(Clone, Copy)]
 pub struct PRINTDLGEXW {
@@ -1080,7 +1080,7 @@ pub struct PRINTDLGW {
     pub hSetupTemplate: super::super::super::Foundation::HGLOBAL,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[derive(Clone, Copy)]
 pub struct PRINTDLGW {
@@ -1112,7 +1112,7 @@ pub struct PRINTPAGERANGE {
     pub nToPage: u32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct PRINTPAGERANGE {
     pub nFromPage: u32,

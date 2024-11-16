@@ -6910,7 +6910,7 @@ pub struct TBBUTTON {
     pub iString: isize,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct TBBUTTON {
     pub iBitmap: i32,

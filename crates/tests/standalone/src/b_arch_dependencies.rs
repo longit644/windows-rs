@@ -163,7 +163,7 @@ pub struct CONTEXT_0_0 {
     pub Xmm15: M128A,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct CONTEXT {
     pub ContextFlags: CONTEXT_FLAGS,
@@ -212,7 +212,7 @@ pub struct FLOATING_SAVE_AREA {
     pub Cr0NpxState: u32,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct FLOATING_SAVE_AREA {
     pub ControlWord: u32,
@@ -257,7 +257,7 @@ pub struct XSAVE_FORMAT {
     pub Reserved4: [u8; 96],
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct XSAVE_FORMAT {
     pub ControlWord: u16,

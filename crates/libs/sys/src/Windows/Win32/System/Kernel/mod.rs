@@ -95,7 +95,7 @@ pub struct FLOATING_SAVE_AREA {
     pub Cr0NpxState: u32,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct FLOATING_SAVE_AREA {
     pub ControlWord: u32,
@@ -251,14 +251,14 @@ pub struct SLIST_HEADER_1 {
     pub _bitfield2: u64,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub union SLIST_HEADER {
     pub Alignment: u64,
     pub Anonymous: SLIST_HEADER_0,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SLIST_HEADER_0 {
     pub Next: SINGLE_LIST_ENTRY,

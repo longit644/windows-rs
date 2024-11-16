@@ -19,7 +19,7 @@ fn test() {
 }
 
 #[test]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 fn test() {
     use windows::{
         Win32::System::Diagnostics::Debug::CONTEXT,

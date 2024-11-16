@@ -179,7 +179,7 @@ pub struct FDISPILLFILE {
     pub cbFile: i32,
 }
 #[repr(C, packed(1))]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct FDISPILLFILE {
     pub ach: [i8; 2],

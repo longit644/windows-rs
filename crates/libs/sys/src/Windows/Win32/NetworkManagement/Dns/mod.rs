@@ -1500,7 +1500,7 @@ pub union IP6_ADDRESS {
     pub IP6Byte: [u8; 16],
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub union IP6_ADDRESS {
     pub IP6Dword: [u32; 4],

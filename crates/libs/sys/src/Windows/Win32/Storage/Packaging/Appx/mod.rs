@@ -317,7 +317,7 @@ pub struct PACKAGE_ID {
     pub publisherId: windows_sys::core::PWSTR,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct PACKAGE_ID {
     pub reserved: u32,
@@ -340,7 +340,7 @@ pub struct PACKAGE_INFO {
     pub packageId: PACKAGE_ID,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct PACKAGE_INFO {
     pub reserved: u32,

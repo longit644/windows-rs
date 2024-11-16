@@ -3584,7 +3584,7 @@ pub struct SERVENT {
     pub s_port: i16,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct SERVENT {
     pub s_name: windows_sys::core::PSTR,
@@ -4275,7 +4275,7 @@ pub struct WSADATA {
     pub szSystemStatus: [i8; 129],
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct WSADATA {
     pub wVersion: u16,

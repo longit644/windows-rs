@@ -1826,7 +1826,7 @@ pub struct FD_XFORM {
     pub eYY: f32,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct FD_XFORM {
     pub eXX: u32,
@@ -1835,7 +1835,7 @@ pub struct FD_XFORM {
     pub eYY: u32,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct FLOATOBJ {
     pub ul1: u32,
@@ -1853,7 +1853,7 @@ pub struct FLOATOBJ_XFORM {
     pub eDy: f32,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct FLOATOBJ_XFORM {
     pub eM11: FLOATOBJ,
@@ -1871,7 +1871,7 @@ pub union FLOAT_LONG {
     pub l: i32,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub union FLOAT_LONG {
     pub e: u32,
@@ -2170,7 +2170,7 @@ pub struct IFIMETRICS {
     pub Align: *mut core::ffi::c_void,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[derive(Clone, Copy)]
 pub struct IFIMETRICS {
@@ -2264,7 +2264,7 @@ pub struct LINEATTRS {
     pub elStyleState: FLOAT_LONG,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct LINEATTRS {
     pub fl: u32,
@@ -2530,7 +2530,7 @@ pub struct POINTE {
     pub y: f32,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct POINTE {
     pub x: u32,
@@ -3004,7 +3004,7 @@ pub struct XFORML {
     pub eDy: f32,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct XFORML {
     pub eM11: u32,

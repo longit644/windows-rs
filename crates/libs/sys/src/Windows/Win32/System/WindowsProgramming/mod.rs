@@ -1134,7 +1134,7 @@ pub struct DELAYLOAD_INFO {
     pub LastError: u32,
 }
 #[repr(C)]
-#[cfg(target_arch = "x86")]
+#[cfg(any(target_arch = "arm", target_arch = "x86"))]
 #[derive(Clone, Copy)]
 pub struct DELAYLOAD_INFO {
     pub Size: u32,
